@@ -1,4 +1,44 @@
 section.main-slider
-    .main-slider__slide
-        .main-slider__wrapper
+    .swiper-container
+        button.main-slider__btn.left.icon-btn
+            svg.icon
+                use(href="icons/icons.svg#arr-left")
+        button.main-slider__btn.right.icon-btn
+            svg.icon
+                use(href="icons/icons.svg#arr-right")
+        .swiper-wrapper
+            .main-slider__slide(style="background-image: url('../images/main-slider-image-1.jpg'), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);")
+                .main-slider__slide-wrapper
+                    .main-slider__slide-info
+                        .main-slider__slide-title КАНДАЛАКШСКИЙ ЗАПОВЕДНИК
+                        .main-slider__slide-text Там, где длинная и темная полярная зима сменяется коротким летом с незаходящим солнцем, где суровые берега омываются водами двух морей, Баренцевым и Белым, на более чем 550 островах расположен Кандалакшский государственный природный заповедник.
+                        a.main-slider__slide-link(href="#") Подробнее
+                        
+                    .main-slider__slide-stats
+                        .main-slider__slide-stats-bg(style="background-image: url('../images/main-slider-image-1.jpg'), linear-gradient(to bottom, rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)")
+                        .main-slider__slide-stats-content
+                            .main-slider__slide-stats-item
+                                .main-slider__slide-stats-title 75%
+                                .main-slider__slide-stats-text Морская акватория
+                            .main-slider__slide-stats-item
+                                .main-slider__slide-stats-title 10&thinsp;000
+                                .main-slider__slide-stats-text Биологических видов
+                            .main-slider__slide-stats-item
+                                .main-slider__slide-stats-title с 1932
+                                .main-slider__slide-stats-text Действует заповедник
+
+
+                    .main-slider__slide-social
+                        a.link-social(href="#")
+                            svg.icon
+                                use(href="icons/icons.svg#vk")
+                        a.link-social(href="#")
+                            svg.icon
+                                use(href="icons/icons.svg#twitter")
+                        a.link-social(href="#")
+                            svg.icon
+                                use(href="icons/icons.svg#facebook")
+                        a.link-social(href="#")
+                            svg.icon
+                                use(href="icons/icons.svg#ok")                    
         

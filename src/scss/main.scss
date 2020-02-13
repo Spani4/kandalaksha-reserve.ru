@@ -1,0 +1,23 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";
+
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/main-slider";
+
+.main {
+    position: relative;
+  
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        opacity: .1;
+        background-image: url("../images/bg-seagalls.svg");
+    }
+}

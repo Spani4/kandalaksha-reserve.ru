@@ -54,28 +54,20 @@
     &__address {
         width: 310px;
     }
-    // &__email {}
-
-
 
     &__social {
 
         @include flex(row,c,c);
         margin-bottom: 20px;
 
-        &-elem {
-            margin: 0 10px;
+        .link-social {
+          margin: 0 10px;
+          border-color: $link-color;
         }
 
         .icon {
-            width: 40px;
-            height: 40px;
-            padding: 8px;
-            border: 2px solid $link-color;
-            border-radius: 50%;
             stroke: $link-color;
             fill: $link-color;
-
         }
     }
 

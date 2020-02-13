@@ -1,13 +1,155 @@
 .main-slider {
+    position: relative;
+
+    &__btn {
+        @include transition(opacity);
+
+        position: absolute;
+        width: 70px;
+        height: 120px;
+        padding: 10px;
+        top: 430px;
+        z-index: 1;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        &.left {
+            left: 40px;
+        }
+
+        &.right {
+            right: 40px;
+        }
+
+        .icon {
+            stroke: $color1;
+        }
+    }
+
 
     &__slide {
+        position: relative;
         height: 980px;
-        background-image:
-            url('../images/main-slider-image-1.jpg'),
-            radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);
+
         background-position: right center;
         background-size: cover;
-
         background-blend-mode: darken;
+
+        &-wrapper {
+            @extend %wrapper;
+            height: 100%;
+            padding-top: 240px;
+        }
+
+        &-info {
+            width: 50%;
+            color: $bg-color;
+
+            @include screen(1500) {
+                padding-left: 10%;
+            }
+            @include screen(1300) {
+                padding-left: 15%;
+            }
+        }
+        
+        &-title {
+            margin-bottom: 20px;
+            font-size: 72px;
+            line-height: 150%;
+        }
+        
+        &-text {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        &-link {
+            @include transition(opacity);
+
+            display: block;
+            width: 190px;
+            height: 50px;
+            border: 2px solid $bg-color;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+
+        &-stats {
+
+            position: absolute;
+            width: 60%;
+            height: 120px;
+            right: 0;
+            bottom: 5%;
+            color: $bg-color;
+            
+            &-bg {
+                position: absolute;
+                
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-position: 100% 94%;
+                background-blend-mode: darken;
+                filter: blur(2px);
+            }
+            
+            &-content {
+                @include flex(row,fs,c);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 0 20px;
+                z-index: 2;
+                // backdrop-filter: blur(5px);
+            }
+            
+            &-item {
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            &-title {
+                font-size: 36px;
+            }
+
+            &-text {
+                font-size: 18px;
+            }
+        }
+
+
+
+
+        &-social {
+            @include flex(row);
+
+            position: absolute;
+            bottom: 40px;
+
+
+            .link-social {
+                
+                border-color: $bg-color;
+                margin: 0 10px;
+            }
+
+            .icon {
+                stroke: $bg-color;
+                fill: $bg-color;
+            }
+        }
     }
+
 }
