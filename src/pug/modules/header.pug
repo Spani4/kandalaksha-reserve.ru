@@ -1,0 +1,27 @@
+header.header
+    .header__wrapper
+        a.header__logo(href="#")
+            img.header__logo-img(src=require('../../images/logo.png'), alt="Logo")
+            .header__logo-text Кандалакшский государственный заповедник
+
+        .header__nav
+            nav.nav
+                ul.nav__list
+                    li.nav__item
+                        a.nav__link(href="#") Главная
+                    li.nav__item
+                        a.nav__link(href="#") Наука
+                    li.nav__item
+                        a.nav__link(href="#") О заповеднике
+                    li.nav__item
+                        a.nav__link(href="#") Посетителям
+                    li.nav__item
+                        a.nav__link(href="#") Охрана
+                    li.nav__item
+                        a.nav__link(href="#") Пресс-центр
+                    li.nav__item
+                        a.nav__link(href="#") Контакты
+            .header__search
+                button.header__search-btn.icon-btn(aria-label="Search")
+                    svg.icon
+                        use(href="icons/icons.svg#search")

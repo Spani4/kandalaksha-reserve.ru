@@ -1,0 +1,11 @@
+.icon-btn {
+    @extend %centered;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    .icon {
+        width: 80%;
+        height: 80%;
+    }
+}

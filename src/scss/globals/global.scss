@@ -1,0 +1,22 @@
+@import 
+    "fonts",
+    "var",
+    "mixins",
+    "extensions",
+    "reset";
+
+body {
+    @include flex(col);
+    position: relative;
+    min-height: 100vh;
+    color: $main-font-color;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.icon {
+    fill: transparent;
+    stroke: $main-font-color;
+}

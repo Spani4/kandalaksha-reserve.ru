@@ -1,0 +1,22 @@
+.nav {
+
+    height: 100%;
+    
+    &__list {
+        @include flex(row, fs, c);
+        height: 100%;
+        font: $roboto-18;
+        line-height: 150%;
+    }
+    
+    &__item {
+        margin-right: 20px;
+        
+        @include transition(color);
+        
+
+        &:hover {
+            color: $link-color;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.main-slider {
+
+    &__slide {
+        height: 980px;
+        background-image:
+            url('../images/main-slider-image-1.jpg'),
+            radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);
+        background-position: right center;
+        background-size: cover;
+
+        background-blend-mode: darken;
+    }
+}

@@ -1,0 +1,46 @@
+.header {
+
+    $header-height: 100px;
+
+    @extend %outer;
+    height: $header-height;
+
+    &__wrapper {
+        @extend %wrapper;
+        @include flex(row,sb,c);
+        height: 100%;
+        padding: 10px 0;
+    }
+
+    &__logo {
+        @include flex(row,fs,c);
+        width: 210px;
+
+        &-img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        &-text {
+            font: $roboto-14;
+            line-height: 150%;
+        }
+    }
+
+    &__nav {
+        @include flex(row,fs,s);
+        height: 100%;
+
+    }
+
+    &__search {
+        @include flex(row,fs,c);
+
+        &-btn {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+}
