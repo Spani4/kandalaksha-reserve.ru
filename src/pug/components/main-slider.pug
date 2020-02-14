@@ -1,13 +1,13 @@
 section.main-slider
     .swiper-container
-        button.main-slider__btn.left.icon-btn
+        button.main-slider__btn.left.icon-btn.slider-btn
             svg.icon
                 use(href="icons/icons.svg#arr-left")
-        button.main-slider__btn.right.icon-btn
+        button.main-slider__btn.right.icon-btn.slider-btn
             svg.icon
                 use(href="icons/icons.svg#arr-right")
         .swiper-wrapper
-            .main-slider__slide(style="background-image: url('../images/main-slider-image-1.jpg'), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);")
+            .main-slider__slide(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);`)
                 .main-slider__slide-wrapper
                     .main-slider__slide-info
                         .main-slider__slide-title КАНДАЛАКШСКИЙ ЗАПОВЕДНИК
@@ -15,7 +15,7 @@ section.main-slider
                         a.main-slider__slide-link(href="#") Подробнее
                         
                     .main-slider__slide-stats
-                        .main-slider__slide-stats-bg(style="background-image: url('../images/main-slider-image-1.jpg'), linear-gradient(to bottom, rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)")
+                        .main-slider__slide-stats-bg(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), linear-gradient(to bottom, rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)`)
                         .main-slider__slide-stats-content
                             .main-slider__slide-stats-item
                                 .main-slider__slide-stats-title 75%

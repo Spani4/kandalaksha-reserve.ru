@@ -1,0 +1,25 @@
+.slider-btn {
+    @include transition(opacity);
+
+    position: absolute;
+    width: 70px;
+    height: 120px;
+    padding: 10px;
+    z-index: 1;
+
+    &:hover {
+        opacity: .6;
+    }
+
+    &.left {
+        left: 40px;
+    }
+
+    &.right {
+        right: 40px;
+    }
+
+    .icon {
+        stroke: $color1;
+    }
+}

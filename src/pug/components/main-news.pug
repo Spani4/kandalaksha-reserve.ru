@@ -1,0 +1,28 @@
+section.main-news
+    .main-news__wrapper
+        .main-news__header
+            h2.main-news__header-title НОВОСТИ
+            a.main-news__header-link(href="#") Все новости &nbsp;
+                svg.icon
+                    use(href="../icons/icons.svg#arr-right-2")
+
+        .main-news__content
+            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-1.jpg')})`)
+                    .main-news__item-title
+                        .main-news__item-title-bg(style=`background-image: url(${require('../../images/news-item-1.jpg')})`)
+                            .main-news__item-title-bg-overlay
+                        h3.main-news__item-title-text Итоги кольцевания птиц
+            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-2.jpg')})`)
+                    .main-news__item-title
+                        .main-news__item-title-bg(style=`background-image: url(${require('../../images/news-item-2.jpg')})`)
+                            .main-news__item-title-bg-overlay                            
+                        h3.main-news__item-title-text Акция "Покормите птиц зимой"
+            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-3.jpg')})`)
+                    .main-news__item-title
+                        .main-news__item-title-bg(style=`background-image: url(${require('../../images/news-item-3.jpg')})`)
+                            .main-news__item-title-bg-overlay
+                        h3.main-news__item-title-text Фотовыставка "Живые страницы природы"
+
+
+
+

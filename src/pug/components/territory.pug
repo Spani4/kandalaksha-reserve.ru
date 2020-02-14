@@ -1,0 +1,35 @@
+section.territory
+    .territory__header 
+        h2.territory__title ТЕРРИТОРИЯ ЗАПОВЕДНИКА
+    .territory__description
+        p Территория Кандалакшского заповедника состоит из 13 участков, расположенных вокруг Кольского полуострова от границ с Норвегией в Баренцевом море до Республики Карелия в Белом море. Большинство участков представляют собой морские архипелаги с прилегающей акваторией. В состав заповедника входит не только суша, но и морская акватория, которая составляет 74,2 % от общей площади и имеет большое значение для существования морских птиц.
+    .territory__content
+        .territory__slider.swiper-container
+            .territory__slider-wrapper.swiper-wrapper
+
+                .territory__slide.swiper-slide
+                   .territory__slide-wrapper
+                        .territory__slide-content
+                            .territory__slide-controls
+                                .territory__slide-number 01/03
+                                .territory__slide-controls-buttons
+                                    button.territory__slide-controls-btn.icon-btn
+                                        svg.icon
+                                            use(href="../icons/icons.svg#arr-left-2")
+                                    button.territory__slide-controls-btn.icon-btn
+                                        svg.icon
+                                            use(href="../icons/icons.svg#arr-right-2")
+                            .territory__slide-description               
+                                .territory__slide-title Западный Мурман         
+                                .territory__slide-description-text.custom-text 
+                                    p Западный Мурман состоит из двух островов: Большого Айнова и Малого Айнова.
+                                    p Участок заповедника включен в Баренцевоморскую инспекцию.
+                                    p Острова включены в заповедник в 1947 году.
+                                    p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
+                        .territory__slide-photo(style=`background-image: url('${require('../../images/territory-slide-1.jpg')}')`)
+                        .territory__slide-thumbs.thumbs
+                            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
+                            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
+                            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
+
+

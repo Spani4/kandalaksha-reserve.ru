@@ -1,0 +1,92 @@
+.territory {
+
+    margin-bottom: 100px;
+    
+    &__header {
+        padding-bottom: 40px;
+        font-style: 36px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+
+    &__description {
+        @extend %outer; 
+        @extend %wrapper; 
+        padding-bottom: 40px;
+        font-style: 18px;
+        line-height: 150%;
+        color: $light-font-color;
+    }
+
+
+    &__slide {
+        position: relative;
+        padding-left: 20px;
+        overflow: hidden;
+
+        &-wrapper {
+            @extend %wrapper;
+            @include flex(row);
+        }
+
+        &-content {
+            min-width: 300px;
+            width: 300px;
+            height: 650px;
+
+            padding-right: 20px;
+            color: $light-font-color;
+        }
+
+        &-controls {
+            @include flex(row,sb);
+
+            margin-bottom: 70px;
+            font-size: 24px;
+
+            .icon-btn svg{
+                stroke: transparent;
+                fill: $bg-color;
+            }
+
+            &-buttons {
+                @include flex();
+            }
+
+            &-btn {
+                @include transition(opacity);
+
+                width: 30px;
+                height: 30px;
+                padding: 3px;
+                background-color: $link-color;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+
+        }
+
+        &-title {
+            font-size: 24px;
+            color: $main-font-color;
+        }
+
+        &-description-text {
+            font-style: 18px;
+        }
+
+        &-photo {
+            display: inline-block;
+            min-width: 1250px;
+            width: 1250px;
+            height: 650px;
+            right: 0;
+            top: 0;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}

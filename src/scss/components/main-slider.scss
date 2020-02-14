@@ -1,31 +1,10 @@
 .main-slider {
+
     position: relative;
+    margin-bottom: 100px;
 
     &__btn {
-        @include transition(opacity);
-
-        position: absolute;
-        width: 70px;
-        height: 120px;
-        padding: 10px;
         top: 430px;
-        z-index: 1;
-
-        &:hover {
-            opacity: .7;
-        }
-
-        &.left {
-            left: 40px;
-        }
-
-        &.right {
-            right: 40px;
-        }
-
-        .icon {
-            stroke: $color1;
-        }
     }
 
 
@@ -79,7 +58,7 @@
             line-height: 50px;
 
             &:hover {
-                opacity: .7;
+                opacity: .6;
             }
         }
 
@@ -112,7 +91,7 @@
                 height: 100%;
                 padding: 0 20px;
                 z-index: 2;
-                // backdrop-filter: blur(5px);
+                // backdrop-filter: blur(5px); работает не во всех браузерах
             }
             
             &-item {
@@ -128,8 +107,6 @@
                 font-size: 18px;
             }
         }
-
-
 
 
         &-social {

@@ -1,0 +1,24 @@
+section.main-gallery
+    .main-gallery__header
+        h2.main-gallery__header-title ФОТОГАЛЕРЕЯ
+        a.main-gallery__header-link(href="#") Все фото &nbsp;
+            svg.icon
+                use(href="../icons/icons.svg#arr-right-2")
+    .main-gallery__slider
+        .territory__slide-thumbs.thumbs
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
+        .main-gallery__slider-container.swiper-container
+            button.main-gallery__slider-btn.left.slider-btn.icon-btn
+                svg.icon
+                    use(href="icons/icons.svg#arr-left")
+            button.main-gallery__slider-btn.right.slider-btn.icon-btn
+                svg.icon
+                    use(href="icons/icons.svg#arr-right")
+            .main-gallery__slider-wrapper.swiper-wrapper
+                .main-gallery__slide.swiper-slide(style=`background-image: url('${require('../../images/gallery-image-1.jpg')}')`)
+
+
+
+

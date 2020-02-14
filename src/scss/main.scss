@@ -6,7 +6,13 @@
 
 @import "components/link-social";
 @import "components/icon-btn";
+@import "components/slider-btn";
+@import "components/thumbs";
+@import "components/custom-text";
 @import "components/main-slider";
+@import "components/main-news";
+@import "components/territory";
+@import "components/main-gallery";
 
 .main {
     position: relative;
@@ -17,6 +23,7 @@
         height: 100%;
         left: 0;
         right: 0;
+        z-index: -1;
         opacity: .1;
         background-image: url("../images/bg-seagalls.svg");
     }

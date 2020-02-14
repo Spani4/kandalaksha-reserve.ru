@@ -1,0 +1,52 @@
+.main-gallery {
+
+    margin-bottom: 100px;
+
+    &__header {
+        @extend %wrapper;
+
+        position: relative;
+        height: 100%;
+        padding-bottom: 40px;
+
+        &-title {
+            font-size: 36px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &-link {
+            @include flex(row, fe, c);
+            @include transition(opacity);
+
+            position: absolute;
+            right: 0;
+            top: 10px;
+            font-size: 18px;
+            color: $link-color;
+
+            &:hover {
+                opacity: .7;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                fill: $link-color;
+                stroke: transparent;
+            }
+        }
+    }    
+
+    &__slider {
+        position: relative;
+
+        &-btn {
+            top: 240px;
+        }
+    }
+
+    &__slide {
+        height: 580px;
+    }
+}
