@@ -77,6 +77,6 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "cwebp-bin": "^5.1.0"
+      
   }
 }

@@ -19,6 +19,8 @@
         justify-content: space-around;
     } @else if $j == c {
         justify-content: center;
+    } @else if $j == s {
+        justify-content: stretch;
     } @else {
         justify-content: $j;
     }

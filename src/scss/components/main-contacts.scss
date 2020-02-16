@@ -1,0 +1,187 @@
+.main-contacts {
+
+    --form-width: 580px;
+
+    margin-bottom: 100px;
+    
+    &__wrapper {
+        @extend %wrapper;
+    }
+
+    &__section {
+        @extend %outer;
+        @extend %wrapper;
+
+        padding-bottom: 40px;
+        font-size: 18px;
+        text-align: center;
+        color: $light-font-color;
+    }
+
+    &__title {
+        font-size: 36px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $main-font-color;
+    }
+
+    &__question {
+        color: $link-color;
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        @extend %outer;
+        position: relative;
+    }
+
+    &__form {
+
+        $form-elem-height: 45px;
+
+        box-sizing: border-box;
+        width: var(--form-width);
+        
+        &-row > * {
+            margin-bottom: 40px;
+        }
+
+        &-row {
+            @include flex(row, sb); 
+        }
+
+        &-group {
+            @include flex(row, s);
+
+            width: 48%;
+        }
+
+        &-input,
+        &-btn,
+        &-label,
+        &-send-btn {
+            display: block;
+            height: $form-elem-height;
+            border: 1px solid $theme-color;
+            font-size: 18px;
+            background-color: transparent;
+            color: $light-font-color;
+            
+            &::placeholder {
+                opacity: .6;
+            }
+        }
+        
+        &-input {
+            width: 100%;
+            padding: 8px 10px;
+
+            &.hidden {
+                display: none;
+            }
+
+            &.fake {
+                padding: 0;
+                line-height: $form-elem-height;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            &.date {
+                width: 0;
+                border: none;
+
+                &:focus {
+                    width: 100%;
+
+                    & + .input.main-contacts__form-label-text {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-label {
+            width: 100%;
+            line-height: $form-elem-height;
+
+            &.date {
+                @include flex();
+            }
+
+            &-text {
+                margin-left: -10px;
+            }
+        }
+
+
+        &-file-label {
+            @include flex(row, fs, c);
+            @include transition(opacity);
+            color: $link-color;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .7;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+                stroke: $link-color;
+                fill: $link-color;
+            }
+        }
+
+        &-btn {
+            @include transition(background-color color);
+
+            width: 45px;
+            min-width: 45px;
+            font-size: 24px;
+            color: $theme-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $bg-color;
+                background-color: $theme-color;
+            }
+
+            &:active {
+                opacity: .7;
+            }
+
+            &:first-child {
+                border-right-width: 0;
+            }
+            &:last-child {
+                border-left-width: 0;
+            }
+        }
+
+        &-send-btn {
+            @include transition(background-color color);
+            width: 180px;
+            color: $bg-color;
+            border: 1px solid $theme-color;
+            background-color: $theme-color;
+            font-size: 18px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $bg-color;
+                color: $theme-color;
+            }
+        }
+    }
+
+    &__map {
+        position: absolute;
+        width: calc( (100% - 1180px)/2 + var(--form-width) ); // 580px - form width
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+
+}

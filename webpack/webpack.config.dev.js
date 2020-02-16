@@ -24,16 +24,16 @@ module.exports = merge(common, {
     ],
     module     : {
         rules: [
-            // {
-            //     test   : /\.(js|vue)$/,
-            //     include: Path.resolve(__dirname, '../src'),
-            //     enforce: 'pre',
-            //     loader : 'eslint-loader',
-            //     exclude: /node_modules/,
-            //     options: {
-            //         emitWarning: true,
-            //     }
-            // },
+            {
+                test   : /\.(js|vue)$/,
+                include: Path.resolve(__dirname, '../src'),
+                enforce: 'pre',
+                loader : 'eslint-loader',
+                exclude: /node_modules/,
+                options: {
+                    emitWarning: true,
+                }
+            },
             {
                 test   : /\.js$/,
                 include: Path.resolve(__dirname, '../src'),

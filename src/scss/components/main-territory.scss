@@ -1,5 +1,7 @@
 .main-territory {
 
+    --slide-content-width: 280px;
+
     margin-bottom: 100px;
     
     &__header {
@@ -31,11 +33,8 @@
         }
 
         &-content {
-            min-width: 300px;
-            width: 300px;
+            width: var(--slide-content-width);
             height: 650px;
-
-            padding-right: 20px;
             color: $light-font-color;
         }
 
@@ -79,9 +78,8 @@
         }
 
         &-photo {
-            display: inline-block;
-            min-width: 1250px;
-            width: 1250px;
+            position: absolute;
+            width: calc( (100% - 1180px)/2 + 1180px - var(--slide-content-width) - 20px ); // 20px - for gap
             height: 650px;
             right: 0;
             top: 0;

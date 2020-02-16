@@ -1,0 +1,53 @@
+section.main-contacts
+    .main-contacts__section
+        h2.main-contacts__title КОНТАКТНАЯ ИНФОРМАЦИЯ
+    .main-contacts__section
+        .main-contacts__question Хотите посетить наш заводник?
+        .main-contacts__request Заполните простую форму заявки
+    .main-contacts__content
+        .main-contacts__wrapper
+
+            form.main-contacts__form
+                .main-contacts__form-row
+                    input.main-contacts__form-input(type="text", placeholder="Выберите заповедник*")
+                .main-contacts__form-row
+                    .main-contacts__form-group
+                        button.main-contacts__form-btn(type="button") -
+                        input.main-contacts__form-input.hidden(value="1")                        
+                        .main-contacts__form-input.fake 1 взрослый
+                        button.main-contacts__form-btn(type="button") +
+                    .main-contacts__form-group
+                        button.main-contacts__form-btn(type="button") -
+                        input.main-contacts__form-input.hidden(value="1")
+                        .main-contacts__form-input.fake 1 ребенок до 14 лет
+                        button.main-contacts__form-btn(type="button") +
+                .main-contacts__form-row
+                    input.main-contacts__form-input(type="text" placeholder="ФИО контактного лица*")
+                .main-contacts__form-row
+                    .main-contacts__form-group
+                        input.main-contacts__form-input(type="text", placeholder="+7 (__) ___ __ __*")
+                    .main-contacts__form-group
+                        input.main-contacts__form-input(type="email", placeholder="ivanov@gmail.com")
+                .main-contacts__form-row
+                    .main-contacts__form-group
+                        label.input.main-contacts__form-label.date
+                            input.main-contacts__form-input.date(type="date")
+                            .input.main-contacts__form-label-text Дата приезда
+
+
+                    .main-contacts__form-group
+                        label.input.main-contacts__form-label.date
+                            input.main-contacts__form-input.date(type="date")
+                            .input.main-contacts__form-label-text Дата отъезда
+
+                .main-contacts__form-row
+                    label.input.main-contacts__form-file-label 
+                        svg.icon
+                            use(href="icons/icons.svg#attache")
+                        span Прикрепить файл
+                        input(type="file" hidden) 
+                .main-contacts__form-row
+                    input.main-contacts__form-send-btn(type="submit", value="Отправить")
+
+            .main-contacts__map#main-map
+
