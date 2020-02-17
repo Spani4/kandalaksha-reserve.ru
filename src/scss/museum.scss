@@ -1,0 +1,66 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";
+
+@import "components/bg";
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/custom-text";
+
+.museum {
+
+    --column-width: 580px;
+
+    @extend %outer;
+    position: relative;
+
+    &__wrapper {
+        @extend %wrapper;
+    }
+
+    &__header {
+        @extend %wrapper;
+    }
+
+    &__title {
+        margin: 60px 0;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        position: relative;
+
+        .museum__wrapper {
+            @include flex(row,sb,s);
+        }
+    }
+
+    &__text {
+        width: var(--column-width);
+    }
+
+    &__regime {
+        width: 420px;
+        margin-top: -10px;
+
+        &-row {
+            @include flex(row,sb);
+            margin-bottom: 20px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    &__image {
+        position: absolute;
+    }
+}
