@@ -1,77 +1,161 @@
 .nav {
 
+    @include flex(row, fe, s);
+    width: 100%;
     height: 100%;
+    font-size: 18px;
     
     &__list {
         @include flex(row, fs, c);
         height: 100%;
-        font: $roboto-18;
+        padding: 0 20px;
         line-height: 150%;
     }
     
     &__item {
-        @include transition(color);
-
         position: relative;
-
-        &:hover .nav__drop-down-btn {
-            color: $link-color;
-        }
-
     }
     
     &__link{
-        &:hover {
-            color: $link-color;
-        }
-    }
-
-    &__link {
+        @include transition(color);
         display: inline-block;
         padding: 10px 10px;
 
+        &:hover {
+            color: $link-color;
+        }
     }
 
     &__drop-down {
         @include transition(color);
         cursor: pointer;
 
-        &:hover .nav__drop-down-list {
-            display: block;;
+        &:hover .nav__drop-down-content {
+            display: block;
+            padding-top: 30px;
         }
-    }
-    
-    &__drop-down-content {
-        position: absolute;
-        padding-top: 35px;
-        width: 250px;
-        left: 0;
-        top: 35px;
-        z-index: 1000;
-        background-color: rgba($bg-color, .95);
-    }
-    
-    &__drop-down-list {
         
-        display: none;
-        padding: 0 10px;
+        &-content {
+            display: none;
+            position: absolute;
 
-        box-shadow: 0 1px 2px 0 $color2;
+            min-width: 200px;
+            width: 250px;
+            left: 0;
+            top: 40px;
+            z-index: 1000;
+            background-color: rgba($bg-color, .98);
 
+            .nav__item,
+            .nav__link {
+                width: 100%;
+                overflow-x: hidden;
+            }
+        }
+        
+        &-list {
+            padding: 0 10px;            
+        }
+    
+        &-item {
+            padding: 10px 0;
+            border-bottom: 1px solid $theme-color;
+    
+            &:last-child {
+                padding-bottom: 20px;
+                border-bottom: none;
+            }
+    
+            .nav__link {
+                display: inline-block;
+                padding: 10px 0;
+            }
+        }
     }
+    
 
-    &__drop-down-item {
-        padding: 10px 0;
-        border-bottom: 1px solid $theme-color;
+    &__collapsed {
+        @include flex(col, c, c);
 
-        &:last-child {
-            padding-bottom: 20px;
-            border-bottom: none;
+        position: relative;
+        cursor: pointer;
+
+        &:hover &-btn {
+            color: $theme-color;
+
+            &::before {
+                top: 10px;
+                border-top-color: $theme-color;
+                transform: rotateZ(180deg);
+            }
+        }
+        
+        &:hover .nav__collapsed-content {
+            display: block;
+            padding-top: 30px;
         }
 
-        .nav__link {
-            display: inline-block;
-            padding: 10px 0;
+        &-btn {
+            @include flex(col, c, c);
+            position: relative;
+            padding: 10px 20px;
+
+            &.hidden {
+                display: none;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 18px;
+                border-width: 7px 4px;
+                border-style: solid;
+                border-color: $main-font-color transparent transparent transparent;
+                transition: all .2s;
+            }
+
+        }
+
+        &-content {
+            display: none;
+            position: absolute;
+    
+            min-width: 200px;
+            right: 0;
+            top: 60px;
+            z-index: 1000;
+
+            .nav__drop-down > .nav__link {
+                white-space: nowrap;
+            }
+        }
+
+        &-list {
+          
+            .nav__item.nav__drop-down {
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 1px ridge #eee;
+                background-color: rgba($bg-color, .98);
+            }
+            
+            .nav__item.nav__drop-down > .nav__link {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .nav__item,
+            .nav__link {
+                width: 100%;
+                text-align: right;
+            }
+        }
+
+        .nav__drop-down-content {
+            left: -250px;
+            top: 0;
+            padding-top: 0 !important;
         }
     }
 

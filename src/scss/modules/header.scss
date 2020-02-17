@@ -7,7 +7,7 @@
 
     &__wrapper {
         @extend %wrapper;
-        @include flex(row,sb,c);
+        @include flex(row,s,c);
         height: 100%;
         padding: 10px 0;
     }
@@ -30,7 +30,9 @@
 
     &__nav {
         @include flex(row,fs,s);
+        width: auto;
         height: 100%;
+        flex-grow: 1;
 
     }
 
