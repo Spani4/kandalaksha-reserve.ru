@@ -37,6 +37,8 @@
     &__search {
         @include flex(row,fs,c);
 
+        margin-left: 10px;
+
         &-btn {
             width: 30px;
             height: 30px;
