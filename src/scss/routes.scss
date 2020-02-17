@@ -1,0 +1,49 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";
+
+@import "components/bg";
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/custom-text";
+
+@import "components/route-stage";
+
+
+.routes {
+
+    @extend %outer;
+
+    position: relative;
+    margin-bottom: 40px;
+
+    &__wrapper {
+        @extend %wrapper;
+    }
+
+    &__title {
+        margin: 30px 0;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        @include flex(row, sb)
+    }
+
+    &__column {
+        @include flex(col, s, s);
+        width: 49%;
+    }
+
+    &__description {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    &__stages {
+        flex-grow: 1;
+    }
+}

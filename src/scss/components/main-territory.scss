@@ -6,9 +6,13 @@
     
     &__header {
         padding-bottom: 40px;
-        font-style: 36px;
+        font-size: 36px;
         text-transform: uppercase;
         text-align: center;
+    }
+
+    &__title {
+        font-size: 36px;
     }
     
 
@@ -16,7 +20,7 @@
         @extend %outer; 
         @extend %wrapper; 
         padding-bottom: 40px;
-        font-style: 18px;
+        font-size: 18px;
         line-height: 150%;
         color: $light-font-color;
     }
@@ -74,7 +78,7 @@
         }
 
         &-description-text {
-            font-style: 18px;
+            font-size: 18px;
         }
 
         &-photo {

@@ -1,0 +1,16 @@
+extends ../layout/layout.pug
+
+block content
+    main.routes
+        .bg
+        .routes__wrapper
+            .routes__header
+                h2.routes__title ЭКОТРОПА "ЛУВЕНЬГСКИЕ ТУНДРЫ"
+            .routes__content
+                .routes__column
+                    .routes__description &laquo;Лувеньгские Тундры&raquo; представляют собой небольшой горный массив, вытянутый параллельно берегу Белого моря севернее&nbsp;п. Лувеньга. Самая высокая из&nbsp;пяти вершин Лувеньгских Тундр поднимается на&nbsp;652&nbsp;м над уровнем моря. Рельеф&nbsp;&mdash; плосковерхие горные склоны, невысокие гряды, плато.
+                    include ../components/route-stages.pug
+
+                .routes__column
+                    img.routes__image(src=require("../../images/luvenga-route.jpg") alt="Маршрут")
+

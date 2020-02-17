@@ -7,16 +7,23 @@
 @import "components/bg";
 @import "components/link-social";
 @import "components/icon-btn";
-@import "components/slider-btn";
-@import "components/thumbs";
 @import "components/custom-text";
 
-@import "components/main-slider";
-@import "components/main-news";
-@import "components/main-territory";
-@import "components/main-gallery";
-@import "components/main-contacts";
 
-.main {
+.about {
+
+    @extend %outer;
+
     position: relative;
+    margin-bottom: 40px;
+
+    &__wrapper {
+        @extend %wrapper;
+    }
+
+    &__title {
+        margin: 60px 0;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
 }

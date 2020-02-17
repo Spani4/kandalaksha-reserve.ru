@@ -1,0 +1,61 @@
+.route-stage {
+    
+    @include flex(col,s,s);
+    height: 100%;
+    font-size: 18px;
+
+
+    &__header {
+        @include flex();
+        margin-bottom: 30px;
+    }
+
+    &__number {
+        font-size: 30px;
+        color: $theme-color;
+
+        &-last {
+            font-size: 18px;
+            color: $light-font-color;
+        }
+    }
+
+    &__title {
+        padding-left: 10px;
+        font-size: 30px;
+    }
+
+    &__feature {
+        margin-bottom: 30px;
+    }
+
+    &__description {
+        flex-grow: 1;
+        line-height: 150%;
+        color: $light-font-color;
+    }
+
+    &__cards {
+        @include flex(row, sb);
+    }
+
+    &__card {
+        width: 32.5%;
+        
+        &-image {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 15px;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &-title {
+            color: $light-font-color;
+        }
+    }
+
+
+}
