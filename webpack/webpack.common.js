@@ -6,7 +6,7 @@ const CopyWebpackPlugin    = require('copy-webpack-plugin');
 const Html                 = require('./Html');
 const Entry                = require('./Entry');
 
-const PUBLIC_PATH = path.join(__dirname, '../public/assets');
+const PUBLIC_PATH = path.join(__dirname, '../public');
 const IMG_PATH = path.join(PUBLIC_PATH, 'images');
 
 module.exports = {
@@ -41,7 +41,10 @@ module.exports = {
     },
     plugins     : [
 
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            // dry: true,
+            cleanOnceBeforeBuildPatterns: ['js/**', 'css', 'images', 'icons', 'fonts', '*.html'],
+        }),
 
         // new CopyWebpackPlugin([
         //     {from: 'src/images', to: IMG_PATH}

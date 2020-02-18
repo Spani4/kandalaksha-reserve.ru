@@ -26,12 +26,18 @@ block content
                         .museum__regime-row
                             .museum__regime-day Суббота и воскресенье
                             .museum__regime-time Выходной
+                        .museum__regime-row-centered Вход в музей бесплатный
 
-
-
+                    .museum__photos
+                        .museum__photos-item(style=`background-image: url(${require('../../images/museum-image-1.jpg')})`)
+                        .museum__photos-item(style=`background-image: url(${require('../../images/museum-image-2.jpg')})`)
+                        .museum__photos-item(style=`background-image: url(${require('../../images/museum-image-3.jpg')})`)
 
                 .museum__column
-                    img.routes__image(src=require("../../images/map-museum.jpg") alt="Местоположение музея")
+                    .museum__image(style=`background-image: url(${require("../../images/map-museum.jpg")})`)
+                    //- img.museum__image(src=require("../../images/map-museum.jpg") alt="Местоположение музея")
+
+        include ../components/main-contacts.pug
 
 
 

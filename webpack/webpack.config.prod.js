@@ -7,7 +7,7 @@ const ManifestPlugin       = require('webpack-manifest-plugin');
 const AssetsPlugin         = require('assets-webpack-plugin');
 const common               = require('./webpack.common.js');
 
-const PUBLIC_PATH = path.join(__dirname, '../public/assets');
+const PUBLIC_PATH = path.join(__dirname, '../public');
 
 module.exports = merge(common, {
     mode   : 'production',

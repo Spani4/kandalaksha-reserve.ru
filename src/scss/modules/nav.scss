@@ -3,7 +3,7 @@
     @include flex(row, fe, s);
     width: 100%;
     height: 100%;
-    font-size: 18px;
+    font-size: 16px;
     
     &__list {
         @include flex(row, fs, c);

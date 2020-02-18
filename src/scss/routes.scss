@@ -10,6 +10,7 @@
 @import "components/custom-text";
 
 @import "components/route-stage";
+@import "components/main-contacts";
 
 
 .routes {
@@ -17,7 +18,6 @@
     @extend %outer;
 
     position: relative;
-    margin-bottom: 40px;
 
     &__wrapper {
         @extend %wrapper;
@@ -30,7 +30,9 @@
     }
 
     &__content {
-        @include flex(row, sb)
+        @include flex(row, sb);
+        margin-bottom: 100px;
+        
     }
 
     &__column {

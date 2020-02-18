@@ -1,6 +1,6 @@
 header.header
     .header__wrapper
-        a.header__logo(href="#")
+        a.header__logo(href="/")
             img.header__logo-img(src=require('../../images/logo.png'), alt="Logo")
             h1.header__logo-text Кандалакшский государственный заповедник
 
@@ -10,3 +10,8 @@ header.header
             button.header__search-btn.icon-btn(aria-label="Search")
                 svg.icon
                     use(href="icons/icons.svg#search")
+        .header__eye
+            a.header__eye-link(href="#" aria-label="Версия для слабовидящих", title="Версия для слабовидящих")
+                svg.icon
+                    use(href="icons/icons.svg#eye")
+

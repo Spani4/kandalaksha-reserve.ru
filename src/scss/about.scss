@@ -8,6 +8,7 @@
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/custom-text";
+@import "components/main-contacts";
 
 
 .about {
@@ -15,10 +16,10 @@
     @extend %outer;
 
     position: relative;
-    margin-bottom: 40px;
-
+    
     &__wrapper {
         @extend %wrapper;
+        margin-bottom: 80px;
     }
 
     &__title {

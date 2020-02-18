@@ -8,6 +8,7 @@
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/custom-text";
+@import "components/main-contacts";
 
 .museum {
 
@@ -32,6 +33,7 @@
 
     &__content {
         position: relative;
+        margin-bottom: 100px;
 
         .museum__wrapper {
             @include flex(row,sb,s);
@@ -50,17 +52,49 @@
             @include flex(row,sb);
             margin-bottom: 20px;
         }
+
+        &-row-centered {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    &__photos {
+        @include flex(row,sb);
+
+        &-item {
+            @include transition(outline-color outline-offset);
+            width: 180px;
+            height: 180px;
+
+            outline: 1px solid transparent;
+            outline-offset: 0;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            &:hover {
+                outline-color: $color3;
+                outline-offset: 3px;
+            }
+        }
     }
 
 
 
 
-
-
-
-
-
     &__image {
+        display: block;
         position: absolute;
+        width: calc( (100% - 1180px)/2 + var(--column-width) );
+        height: 100%;
+        right: 0;
+        top: 0;
+
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }

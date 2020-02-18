@@ -8,6 +8,7 @@
     &__wrapper {
         @extend %wrapper;
         @include flex(row,s,c);
+        position: relative;
         height: 100%;
         padding: 10px 0;
     }
@@ -55,6 +56,27 @@
             .icon {
                 transition: stroke .3s;
             }
+        }
+    }
+
+    &__eye {
+        @include flex(row,c,c);
+        position: absolute;
+        left: 230px;
+        top: 35px;
+
+
+        &:hover {
+            .icon {
+                transition-duration: .1s;
+                stroke: $link-color;
+            }
+        }
+        
+        .icon {
+            transition: stroke .3s;
+            width: 30px;
+            height: 30px;
         }
     }
 
