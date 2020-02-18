@@ -10,7 +10,12 @@ nav.nav.js-nav
                         a.nav__link(href="#") Категория #{i}
                         .nav__drop-down-content
                             ul.nav__drop-down-list
-                                each j in [1,2,3,4,5,6,7]
+                                each j in [1,2,3,4,5,6,7,8,9]
                                     li.nav__drop-down-item
                                         a.nav__link(href="#") Подкатегория #{j}
+                                        ul.nav__drop-down-sublist
+                                            each k in [1,2,3,4,5,6,7]
+                                                li.nav__drop-down-subitem
+                                                    a.nav__link(href="#") Подподкатегория #{k}
+
 

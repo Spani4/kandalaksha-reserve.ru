@@ -1,12 +1,12 @@
 .nav {
 
-    @include flex(row, fe, s);
+    @include flex(row, c, s);
     width: 100%;
     height: 100%;
-    font-size: 16px;
+    font-size: 15px;
     
     &__list {
-        @include flex(row, fs, c);
+        @include flex(row, s, c);
         height: 100%;
         padding: 0 20px;
         line-height: 150%;
@@ -33,6 +33,18 @@
         &:hover .nav__drop-down-content {
             display: block;
             padding-top: 30px;
+            
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+
+            .nav__drop-down-sublist {
+                width: 230px;
+                left: 240px;
+                right: unset;
+            }
         }
         
         &-content {
@@ -54,21 +66,49 @@
         }
         
         &-list {
-            padding: 0 10px;            
+            // padding: 0 10px;            
         }
     
         &-item {
-            padding: 10px 0;
+            position: relative;
+            padding:  0;
             border-bottom: 1px solid $theme-color;
     
             &:last-child {
-                padding-bottom: 20px;
                 border-bottom: none;
             }
     
             .nav__link {
                 display: inline-block;
-                padding: 10px 0;
+                padding: 10px; //!!!
+                overflow-x: hidden;
+            }
+
+            &:hover {
+
+                .nav__drop-down-sublist {
+                    display: block;
+                }
+            }
+        }
+
+
+        &-sublist {
+            position: absolute;
+            display: none;
+            min-width: 230px;
+            width: 230px;
+            left: unset;
+            right: 240px;
+            top: 0;
+            transition: height 0.2s;
+            background-color: rgba($bg-color, .98);
+        }
+
+        &-subitem {
+
+            .nav__link {
+                padding-left: 20px;
             }
         }
     }

@@ -1,31 +1,38 @@
 .header {
 
-    $header-height: 100px;
+    $header-height: 110px;
 
     @extend %outer;
     height: $header-height;
 
     &__wrapper {
         @extend %wrapper;
-        @include flex(row,s,c);
+        @include flex(col,s,s);
         position: relative;
         height: 100%;
-        padding: 10px 0;
+        padding: 10px 0 0;
     }
+
+    &__title {
+        // padding: 5px 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 2px;
+
+    }
+
 
     &__logo {
         @include flex(row,fs,c);
-        width: 210px;
+        position: absolute;
+        // width: 210px;
+        top: 5px;
+        left: 35%;
 
         &-img {
-            width: 80px;
-            height: 80px;
-            margin-right: 10px;
-        }
-
-        &-text {
-            font: $roboto-14;
-            line-height: 150%;
+            width: 60px;
+            height: 60px;
         }
     }
 
@@ -39,8 +46,10 @@
 
     &__search {
         @include flex(row,fs,c);
+        position: absolute;
 
-        margin-left: 10px;
+        right: 60px;
+        top: 20px;
 
         &-btn {
             width: 30px;
@@ -55,16 +64,17 @@
             
             .icon {
                 transition: stroke .3s;
+                stroke: $color4;
             }
         }
     }
 
     &__eye {
+        @include transition(all);
         @include flex(row,c,c);
         position: absolute;
-        left: 230px;
-        top: 35px;
-
+        right: 0;
+        top: 20px;
 
         &:hover {
             .icon {
@@ -77,6 +87,7 @@
             transition: stroke .3s;
             width: 30px;
             height: 30px;
+            stroke: $color4;
         }
     }
 

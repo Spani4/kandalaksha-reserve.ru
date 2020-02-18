@@ -21,9 +21,10 @@ function pushItem(item = null) {
 
 function adjustItems() {
     items.forEach(item => {
-        if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth > 170) {
-            pushItem(item);
-        }
+        // if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth > 150) {
+            // pushItem(item);
+        // }
+        pushItem(item);
     });
 }
 
@@ -38,7 +39,7 @@ function adjustBtn() {
 
 function checkNavContent() {
 
-    if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth <= 170) {
+    if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth <= 150) {
 
         if ( visibleNav.children.length === 0 ) return;
         popItem();
@@ -61,8 +62,8 @@ export default function() {
     adjustItems();
     adjustBtn();
 
-    window.addEventListener('resize', () => {
-        handleResize();
-    });
+    // window.addEventListener('resize', () => {
+    //     handleResize();
+    // });
 
 }
