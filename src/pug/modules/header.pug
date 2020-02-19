@@ -4,11 +4,14 @@ header.header
         a.header__logo(href="/")
             img.header__logo-img(src=require('../../images/logo.png'), alt="Logo")
         h1.header__title 
-            a.header__title-link(href="/") Кандалакшский 
+            a.header__title-link(href="/") КАНДАЛАКШСКИЙ 
                 br
                 | государственный
                 br
                 | заповедник
+        a.header__ministery(href="#")
+            img.header__header__ministery-img(src=require("../../images/footer-logo.svg"))
+
         .header__search
             button.header__search-btn.icon-btn(aria-label="Search")
                 svg.icon
@@ -17,6 +20,8 @@ header.header
             a.header__eye-link(href="#" aria-label="Версия для слабовидящих", title="Версия для слабовидящих")
                 svg.icon
                     use(href="icons/icons.svg#eye")
+        .header__lang
+            a.header__lang-link(href="#") RU / ENG
 
         .header__nav
             include ./nav.pug

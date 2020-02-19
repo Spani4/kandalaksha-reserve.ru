@@ -6,6 +6,8 @@ section.main-slider
         button.main-slider__btn.right.icon-btn.slider-btn
             svg.icon
                 use(href="icons/icons.svg#arr-right")
+        .main-slider__progress-bar.progress-bar            
+
         .swiper-wrapper
             each i in [1,2,3]
                 .main-slider__slide.swiper-slide(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);`)
@@ -41,5 +43,6 @@ section.main-slider
                                     use(href="icons/icons.svg#facebook")
                             a.link-social(href="#")
                                 svg.icon
-                                    use(href="icons/icons.svg#ok")                    
+                                    use(href="icons/icons.svg#ok")   
+
         

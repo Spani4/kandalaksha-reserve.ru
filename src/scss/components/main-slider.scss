@@ -8,6 +8,20 @@
         z-index: 10;
     }
 
+    &__progress-bar {
+        position: absolute;
+        width: 0;
+        height: 5px;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+
+        opacity: .9;
+
+        background-color: $theme-color;
+
+        transition: width .1s linear;
+    }
 
     &__slide {
         position: relative;
@@ -130,6 +144,8 @@
             }
         }
     }
+
+
 
     .swiper-container {
         width: 100%;
