@@ -1,0 +1,14 @@
+.slider-progress-bar {    
+    position: absolute;
+    width: 0;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+
+    opacity: .9;
+
+    background-color: $theme-color;
+
+    transition: width .1s linear;
+}

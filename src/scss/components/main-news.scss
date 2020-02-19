@@ -60,21 +60,8 @@
             width: 100%;
             left: 0;
             bottom: 0;
-
-            &-bg {
-                position: absolute;
-                width: 99%;
-                height: 100%;
-                left: 0.5%;
-                bottom: 0;
-                background-position: center bottom;
-                filter: blur(3px);
-
-                &-overlay {
-                    height: 100%;
-                    background-color: rgba(0,0,0,.15);
-                }
-            }
+            background-color: rgba(0,0,0, .3);
+            backdrop-filter: blur(6px); // работает не во всех браузерах
 
             &-text {
                 position: relative;

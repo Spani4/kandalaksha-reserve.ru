@@ -92,4 +92,11 @@
             background-repeat: no-repeat;
         }
     }
+
+    &__progress-bar {
+        position: absolute;
+        width: calc( (100% - 1180px)/2 + 1180px - var(--slide-content-width) - 20px ); // == photo width
+        right: 0;
+        bottom: 0;
+    }
 }

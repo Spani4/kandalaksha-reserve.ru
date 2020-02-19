@@ -2,33 +2,48 @@ import "swiper/css/swiper.min.css";
 
 import Swiper from "swiper";
 
+const swipers = [];
 
-function initAutoSlide(swiper, progressBar) {
+(function setTimer() {
 
-    console.log(swiper);
-    let progressBarWidth = 0;
+    // общий таймер для всех слайдеров на главной
 
     setInterval(() => {
-        
-        if ( progressBarWidth === 100 ) {
-            progressBarWidth += 0.5;
-            // progressBar.style.width = `${progressBarWidth}%`;
-            console.log(progressBar);
-            swiper.slideNext();
-        }
-    }, 120);
 
-    // swiper.on('transitionStart', () => {
-    //     console.log('tr start');
-    //     progressBarWidth = 0;
-    //     progressBar.style.width = `${progressBarWidth}%`;
-    // });
+        if ( swipers.length === 0 ) return;
 
-    // swiper.on('transitionEnd', () => {
-    //     console.log('tr end');
-    //     progressBarWidth = 0;
+        swipers.forEach(swiper => {
 
-    // });
+            const slider = swiper;
+
+            if ( slider.slideProgress > 0 && slider.slideProgress < 100 ) {
+                slider.slideProgress += 0.5;
+                slider.progressBar.style.width = `${slider.slideProgress}%`;
+            } else if ( slider.slideProgress > 0 ) {
+                slider.slideNext();   
+            }
+        });
+    }, 60);
+})();
+
+function initSlider(swiper, progressBar) {
+    
+    const slider = swiper;
+
+    slider.progressBar = progressBar;
+    slider.slideProgress = 0;
+    slider.slideProgress += 0.5;
+    swipers.push(slider);
+
+    slider.on('transitionStart', () => {
+        slider.slideProgress = 0;
+        slider.progressBar.style.width = `${slider.slideProgress}%`;
+    });
+
+    slider.on('transitionEnd', () => {
+        slider.slideProgress += 0.5;
+    });
+
 }
 
 
@@ -36,10 +51,7 @@ export function initMainSlider() {
 
     const section = document.querySelector('.main-slider');
     const swiperContainer = section.querySelector('.swiper-container');
-    const btnPrev = section.querySelector('.slider-btn.left');
-    const btnNext = section.querySelector('.slider-btn.right');
-    const progressBar = section.querySelector('.progress-bar');
-
+    const progressBar = section.querySelector('.slider-progress-bar');
 
     const swiper = new Swiper(swiperContainer, {
         loop: true,
@@ -47,53 +59,39 @@ export function initMainSlider() {
         speed: 500,
         
         navigation: {
-            prevEl: btnPrev,
-            nextEl: btnNext
+            prevEl: '.slider-btn.left',
+            nextEl: '.slider-btn.right'
         },
-
-        // init: false,
     });
 
-    // swiper.on('init', () => {
-    //     initAutoSlide(swiper, progressBar);
-    // });
-
-    // swiper.init();
-
-
+    initSlider(swiper, progressBar);
 }
 
 export function initTerritorySlider() {
 
     const section = document.querySelector('.main-territory');
     const swiperContainer = section.querySelector('.swiper-container');
-    // const btnPrev = section.querySelectorAll('.btn-prev');
-    // const btnNext = section.querySelectorAll('btn-next');
+    const progressBar = section.querySelector('.slider-progress-bar');
 
     const swiper = new Swiper(swiperContainer, {
         loop: true,
         slidesPerView: 1,
         speed: 500,
-        // effect: 'fade',
         
         navigation: {
             prevEl: '.btn-prev',
             nextEl: '.btn-next'
         },
-
-        // fadeEffect: {
-        //     crossFade: true,
-        // }
-
     });
+
+    initSlider(swiper, progressBar);
 }
 
 export function initGallerySlider() {
 
     const section = document.querySelector('.main-gallery');
     const swiperContainer = section.querySelector('.swiper-container');
-    const btnPrev = section.querySelector('.slider-btn.left');
-    const btnNext = section.querySelector('.slider-btn.right');
+    const progressBar = section.querySelector('.slider-progress-bar');
 
     const swiper = new Swiper(swiperContainer, {
         loop: true,
@@ -101,13 +99,15 @@ export function initGallerySlider() {
         speed: 500,
         
         navigation: {
-            prevEl: btnPrev,
-            nextEl: btnNext
+            prevEl: '.slider-btn.left',
+            nextEl: '.slider-btn.right'
         },
-
-
     });
+
+    initSlider(swiper, progressBar);
 }
+
+
 
 export default function() {
 

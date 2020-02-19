@@ -28,14 +28,15 @@ module.exports = merge(common, {
     bail   : true,
     output : {
         filename: 'js/[name].[chunkhash:8].js',
-        // chunkFilename: 'js/[name].[chunkhash:8].chunk.js'
+        // chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
+        publicPath: '/',
 
     },
     plugins: [
         new Webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        new ManifestPlugin(),
+        new ManifestPlugin({}),
         new AssetsPlugin({
             filename   : 'assets.json',
             path       : PUBLIC_PATH,

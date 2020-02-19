@@ -6,7 +6,7 @@ section.main-slider
         button.main-slider__btn.right.icon-btn.slider-btn
             svg.icon
                 use(href="icons/icons.svg#arr-right")
-        .main-slider__progress-bar.progress-bar            
+        .main-slider__progress-bar.slider-progress-bar            
 
         .swiper-wrapper
             each i in [1,2,3]
@@ -18,7 +18,7 @@ section.main-slider
                             a.main-slider__slide-link(href="#") Подробнее
                             
                         .main-slider__slide-stats
-                            .main-slider__slide-stats-bg(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), linear-gradient(to bottom, rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)`)
+                            //- .main-slider__slide-stats-bg(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), linear-gradient(to bottom, rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)`)
                             .main-slider__slide-stats-content
                                 .main-slider__slide-stats-item
                                     .main-slider__slide-stats-title 75%
