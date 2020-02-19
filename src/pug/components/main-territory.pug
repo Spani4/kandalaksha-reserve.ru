@@ -7,29 +7,31 @@ section.main-territory
         .main-territory__slider.swiper-container
             .main-territory__slider-wrapper.swiper-wrapper
 
-                .main-territory__slide.swiper-slide
-                   .main-territory__slide-wrapper
-                        .main-territory__slide-content
-                            .main-territory__slide-controls
-                                .main-territory__slide-number 01/03
-                                .main-territory__slide-controls-buttons
-                                    button.main-territory__slide-controls-btn.icon-btn
-                                        svg.icon
-                                            use(href="/icons/icons.svg#arr-left-2")
-                                    button.main-territory__slide-controls-btn.icon-btn
-                                        svg.icon
-                                            use(href="/icons/icons.svg#arr-right-2")
-                            .main-territory__slide-description               
-                                .main-territory__slide-title Западный Мурман         
-                                .main-territory__slide-description-text.custom-text 
-                                    p Западный Мурман состоит из двух островов: Большого Айнова и Малого Айнова.
-                                    p Участок заповедника включен в Баренцевоморскую инспекцию.
-                                    p Острова включены в заповедник в 1947 году.
-                                    p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
-                        .main-territory__slide-photo(style=`background-image: url('${require('../../images/main-territory-slide-1.jpg')}')`)
-                        .main-territory__slide-thumbs.thumbs
-                            .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
-                            .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
-                            .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
+                - var arr = [1,2]
+                each i in arr
+                    .main-territory__slide.swiper-slide
+                        .main-territory__slide-wrapper
+                                .main-territory__slide-content
+                                    .main-territory__slide-controls
+                                        .main-territory__slide-number 0#{i}/0#{arr.length}
+                                        .main-territory__slide-controls-buttons
+                                            button.main-territory__slide-controls-btn.icon-btn.btn-prev
+                                                svg.icon
+                                                    use(href="/icons/icons.svg#arr-left-2")
+                                            button.main-territory__slide-controls-btn.icon-btn.btn-next
+                                                svg.icon
+                                                    use(href="/icons/icons.svg#arr-right-2")
+                                    .main-territory__slide-description               
+                                        .main-territory__slide-title Западный Мурман         
+                                        .main-territory__slide-description-text.custom-text 
+                                            p Западный Мурман состоит из двух островов: Большого Айнова и Малого Айнова.
+                                            p Участок заповедника включен в Баренцевоморскую инспекцию.
+                                            p Острова включены в заповедник в 1947 году.
+                                            p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
+                                .main-territory__slide-photo(style=`background-image: url('${require('../../images/main-territory-slide-1.jpg')}')`)
+                                .main-territory__slide-thumbs.thumbs
+                                    .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
+                                    .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
+                                    .main-territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
 
 

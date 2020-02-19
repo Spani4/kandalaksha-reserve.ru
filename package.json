@@ -63,7 +63,6 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
     "svg-sprite-loader": "^4.1.6",
-    "swiper": "^5.3.0",
     "vue": "^2.6.11",
     "vue-imask": "^6.0.1",
     "vue-loader": "^15.8.3",
@@ -76,6 +75,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "swiper": "^5.3.0",
     "leaflet": "^1.6.0"
   }
 }

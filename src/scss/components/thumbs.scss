@@ -1,11 +1,12 @@
 .thumbs {
-    @include flex(row)
+    @include flex(row);
     position: absolute;
     width: 340px;
     height: 120px;
     right: 0;
     bottom: 20px;
     padding: 20px;
+    z-index: 10;
     background-color: rgba(0,0,0,0.3);
     
     &-item {

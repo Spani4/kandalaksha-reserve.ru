@@ -17,7 +17,8 @@ section.main-gallery
                 svg.icon
                     use(href="icons/icons.svg#arr-right")
             .main-gallery__slider-wrapper.swiper-wrapper
-                .main-gallery__slide.swiper-slide(style=`background-image: url('${require('../../images/gallery-image-1.jpg')}')`)
+                each i in [1,2,3]
+                    .main-gallery__slide.swiper-slide(style=`background-image: url('${require('../../images/gallery-image-1.jpg')}')`)
 
 
 

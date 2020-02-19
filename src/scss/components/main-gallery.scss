@@ -43,6 +43,7 @@
 
         &-btn {
             top: 240px;
+            z-index: 10;
         }
     }
 
@@ -51,5 +52,9 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        &.swiper-slide {
+            height: 580px;
+        }
     }
 }
