@@ -14,6 +14,7 @@ import { initMainSlider, initTerritorySlider, initGallerySlider } from "./compon
 document.addEventListener('DOMContentLoaded', () => {
     
     collapsibleNav();
+    
     initMainSlider();
     initTerritorySlider();
     initGallerySlider();

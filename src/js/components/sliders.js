@@ -23,7 +23,7 @@ const swipers = [];
                 slider.slideNext();   
             }
         });
-    }, 60);
+    }, 70);
 })();
 
 function initSlider(swiper, progressBar) {
