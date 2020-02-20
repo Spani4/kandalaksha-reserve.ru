@@ -27,6 +27,10 @@
         padding-top: 10px;
         left: 300px;
         top: 0;
+
+        @include screen(850) {
+            display: none;
+        }
     }
 
 

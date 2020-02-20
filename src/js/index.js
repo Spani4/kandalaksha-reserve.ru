@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     collapsibleNav();
     
-    initMainSlider();
-    initTerritorySlider();
-    initGallerySlider();
+    // initMainSlider();
+    // initTerritorySlider();
+    // initGallerySlider();
 
-    initMainPageMap();
+    // initMainPageMap();
 });
 

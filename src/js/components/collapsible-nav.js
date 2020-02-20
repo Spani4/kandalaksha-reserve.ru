@@ -11,20 +11,20 @@ function popItem() {
 }
 
 function pushItem(item = null) {
-
-    if ( item ) {
+    
+    if ( item !== null ) {
         visibleNav.append(item);
-    } else {
+    } else if ( collapsedNav.children.length !== 0 ) {
         visibleNav.append(collapsedNav.firstElementChild);
     }
 }
 
 function adjustItems() {
     items.forEach(item => {
-        // if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth > 150) {
-            // pushItem(item);
-        // }
-        pushItem(item);
+        if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth > 150) {
+            pushItem(item);
+        }
+        // pushItem(item);
     });
 }
 
@@ -62,8 +62,8 @@ export default function() {
     adjustItems();
     adjustBtn();
 
-    // window.addEventListener('resize', () => {
-    //     handleResize();
-    // });
+    window.addEventListener('resize', () => {
+        handleResize();
+    });
 
 }
