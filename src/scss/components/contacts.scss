@@ -1,4 +1,4 @@
-.main-contacts {
+.contacts {
 
     --form-width: 580px;
 
@@ -18,12 +18,12 @@
         color: $light-font-color;
     }
 
-    &__title {
-        font-size: 36px;
-        text-align: center;
-        text-transform: uppercase;
-        color: $main-font-color;
-    }
+    // &__title {
+    //     font-size: 36px;
+    //     text-align: center;
+    //     text-transform: uppercase;
+    //     color: $main-font-color;
+    // }
 
     &__question {
         color: $link-color;

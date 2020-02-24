@@ -5,6 +5,7 @@
 @import "modules/footer";
 
 @import "components/bg";
+@import "components/section-header";
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/slider-btn";
@@ -16,7 +17,7 @@
 @import "components/main-news";
 @import "components/main-territory";
 @import "components/main-gallery";
-@import "components/main-contacts";
+@import "components/contacts";
 
 .main {
     position: relative;

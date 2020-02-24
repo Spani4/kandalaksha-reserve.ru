@@ -14,13 +14,11 @@ const swipers = [];
 
         swipers.forEach(swiper => {
 
-            const slider = swiper;
-
-            if ( slider.slideProgress > 0 && slider.slideProgress < 100 ) {
-                slider.slideProgress += 0.5;
-                slider.progressBar.style.width = `${slider.slideProgress}%`;
-            } else if ( slider.slideProgress > 0 ) {
-                slider.slideNext();   
+            if ( swiper.slideProgress > 0 && swiper.slideProgress < 100 ) {
+                swiper.slideProgress += 0.5;
+                swiper.progressBar.style.width = `${swiper.slideProgress}%`;
+            } else if ( swiper.slideProgress > 0 ) {
+                swiper.slideNext();   
             }
         });
     }, 70);
@@ -28,20 +26,18 @@ const swipers = [];
 
 function initSlider(swiper, progressBar) {
     
-    const slider = swiper;
+    swiper.progressBar = progressBar;
+    swiper.slideProgress = 0;
+    swiper.slideProgress += 0.5;
+    swipers.push(swiper);
 
-    slider.progressBar = progressBar;
-    slider.slideProgress = 0;
-    slider.slideProgress += 0.5;
-    swipers.push(slider);
-
-    slider.on('transitionStart', () => {
-        slider.slideProgress = 0;
-        slider.progressBar.style.width = `${slider.slideProgress}%`;
+    swiper.on('transitionStart', () => {
+        swiper.slideProgress = 0;
+        swiper.progressBar.style.width = `${swiper.slideProgress}%`;
     });
 
-    slider.on('transitionEnd', () => {
-        slider.slideProgress += 0.5;
+    swiper.on('transitionEnd', () => {
+        swiper.slideProgress += 0.5;
     });
 
 }
@@ -79,8 +75,8 @@ export function initTerritorySlider() {
         speed: 500,
         
         navigation: {
-            prevEl: '.btn-prev',
-            nextEl: '.btn-next'
+            prevEl: '.main-territory.btn-prev',
+            nextEl: '.main-territory.btn-next'
         },
     });
 
@@ -105,6 +101,32 @@ export function initGallerySlider() {
     });
 
     initSlider(swiper, progressBar);
+}
+
+export function initNewsSlider() {
+
+    const section = document.querySelector('.main-news');
+    const swiperContainer = section.querySelector('.swiper-container');
+
+    const swiper = new Swiper(swiperContainer, {
+        slidesPerView: 1,
+        speed: 500,
+        
+        navigation: {
+            prevEl: '.main-news .btn-prev',
+            nextEl: '.main-news .btn-next'
+        },
+
+        breakpoints: {
+            769: {
+                allowTouchMove: false,
+                slidesPerView: 3,
+                spaceBetween: 20,
+            }
+        },
+    });
+
+
 }
 
 

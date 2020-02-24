@@ -11,10 +11,7 @@
             top: 35%;
         }
         @include screen(768) {
-            top: 30%;
-        }
-        @include screen(480) {
-            top: 23%;
+            display: none;
         }
     }
 
@@ -39,6 +36,7 @@
         }
         @include screen(480) {
             height: 580px;
+            background-position: center;
         }
 
         &-wrapper {
@@ -76,7 +74,15 @@
             }
             @include screen(991) {
                 width: auto;
-                // padding: 0 10%;
+                padding: 0 13%;
+            }
+            @include screen(768) {
+                width: auto;
+                padding: 0 30px;
+            }
+            @include screen(480) {
+                width: auto;
+                padding: 0 20px;
             }
         }
         
@@ -174,6 +180,17 @@
             &-text {
                 font-size: 18px;
             }
+
+            @include screen(992) {
+    
+                &-title {
+                    font-size: 30px;
+                }
+    
+                &-text {
+                    font-size: 16px;
+                }
+            }
         }
 
 
@@ -185,12 +202,18 @@
 
             @include screen(1199) {
                 padding-left: 40px;
+           
+                @include screen(768) {
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0;
+                }
             }
 
             .link-social {
-                
                 border-color: $bg-color;
                 margin: 0 10px;
+
             }
 
             .icon {
@@ -200,11 +223,24 @@
         }
     }
 
+    @include screen(1199) {
 
+        margin-bottom: 80px;
+    }
 
-    .swiper-container {
-        width: 100%;
-        height: 980px;
+    @include screen(992) {
+
+        margin-bottom: 60px;
+    }
+
+    @include screen(768) {
+
+        margin-bottom: 40px;
+    }
+
+    @include screen(575) {
+        
+        margin-bottom: 30px;
     }
 
 }

@@ -36,14 +36,6 @@
             
         }
 
-        // &:nth-last-child(2),
-        // &:last-child {
-        //     .nav__drop-down-content {
-        //         left: unset;
-        //         right: 0;
-        //     }
-        // }
-
         &:nth-child(1),
         &:nth-child(2),
         &:nth-child(3) {
@@ -94,15 +86,15 @@
             }
         }
 
-        &-item:not(last-child)::after,
-        &-subitem:not(last-child)::after {
+        &-item:not(:last-child)::after,
+        &-subitem:not(:last-child)::after {
             content: "";
             position: absolute;
             margin: 0 auto;
             height: 1px;
             width: 90%;
             left: 5%;
-            top: 0;
+            bottom: 0;
             background-color: $theme-color;
         }
 

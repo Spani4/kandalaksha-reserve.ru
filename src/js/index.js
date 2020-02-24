@@ -5,7 +5,7 @@ import collapsibleNav from "./components/collapsible-nav";
 
 import { initMainPageMap } from "./components/maps";
 
-import { initMainSlider, initTerritorySlider, initGallerySlider } from "./components/sliders";
+import { initMainSlider, initTerritorySlider, initGallerySlider, initNewsSlider } from "./components/sliders";
 
 
 
@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     collapsibleNav();
     
-    // initMainSlider();
-    // initTerritorySlider();
-    // initGallerySlider();
+    initMainSlider();
+    initNewsSlider();
+    initTerritorySlider();
+    initGallerySlider();
 
-    // initMainPageMap();
+    initMainPageMap();
 });
 

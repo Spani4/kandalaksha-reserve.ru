@@ -1,21 +1,34 @@
 section.main-news
     .main-news__wrapper
-        .main-news__header
-            h2.main-news__header-title НОВОСТИ
-            a.main-news__header-link(href="#") Все новости &nbsp;
+        .main-news__header.section-header
+            h2.main-news__header-title.section-header__title НОВОСТИ
+            a.main-news__header-link.section-header__link(href="#") Все новости &nbsp;
                 svg.icon
                     use(href="icons/icons.svg#arr-right-2")
+            .main-news__slider-controls-buttons
+                button.main-news__slider-controls-btn.icon-btn.btn-prev
+                    svg.icon
+                        use(href="/icons/icons.svg#arr-left-2")
+                button.main-news__slider-controls-btn.icon-btn.btn-next
+                    svg.icon
+                        use(href="/icons/icons.svg#arr-right-2")            
 
-        .main-news__content
-            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-1.jpg')})`)
-                    .main-news__item-title
-                        h3.main-news__item-title-text Итоги кольцевания птиц
-            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-2.jpg')})`)
-                    .main-news__item-title
-                        h3.main-news__item-title-text Акция "Покормите птиц зимой"
-            a.main-news__item(href="#" style=`background-image: url(${require('../../images/news-item-3.jpg')})`)
-                    .main-news__item-title
-                        h3.main-news__item-title-text Фотовыставка "Живые страницы природы"
+        .main-news__content.swiper-container
+            .main-news__content.swiper-wrapper
+                a.main-news__item.swiper-slide(href="#" style=`background-image: url(${require('../../images/news-item-1.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Итоги кольцевания птиц
+                a.main-news__item.swiper-slide(href="#" style=`background-image: url(${require('../../images/news-item-2.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Акция "Покормите птиц зимой"
+                a.main-news__item.swiper-slide(href="#" style=`background-image: url(${require('../../images/news-item-3.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Фотовыставка "Живые страницы природы"
+
+        a.main-news__bottom-link.main-news__link(href="#") Все новости &nbsp;
+            svg.icon
+                use(href="icons/icons.svg#arr-right-2")
+
 
 
 

@@ -1,16 +1,17 @@
 section.main-gallery
-    .main-gallery__header
-        h2.main-gallery__header-title ФОТОГАЛЕРЕЯ
-        a.main-gallery__header-link(href="#") Все фото &nbsp;
-            svg.icon
-                use(href="icons/icons.svg#arr-right-2")
+    .main-gallery__wrapper
+        .main-gallery__header.section-header
+            h2.main-gallery__header-title.section-header__title ФОТОГАЛЕРЕЯ
+            a.main-gallery__header-link.section-header__link(href="#") Все фото &nbsp;
+                svg.icon
+                    use(href="icons/icons.svg#arr-right-2")
     .main-gallery__slider
-        .territory__slide-thumbs.thumbs
+        .main-gallery__thumbs.thumbs
             .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
             .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
             .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
         .main-gallery__slider-container.swiper-container
-            .main-territory__progress-bar.slider-progress-bar  
+            .main-gallery__progress-bar.slider-progress-bar  
             button.main-gallery__slider-btn.left.slider-btn.icon-btn
                 svg.icon
                     use(href="icons/icons.svg#arr-left")

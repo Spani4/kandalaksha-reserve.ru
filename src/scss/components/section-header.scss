@@ -1,0 +1,68 @@
+.section-header {
+    @extend %wrapper;
+
+    position: relative;
+    height: 100%;
+    padding-bottom: 40px;
+
+    &__title {
+        font-size: 36px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include screen(1199) {
+            font-size: 34px;
+        }
+
+        @include screen(991) {
+            font-size: 30px;
+        }
+
+        @include screen(768) {
+            font-size: 24px;
+        }
+    }
+    
+    &__link {
+        @include flex(row, fe, c);
+        @include transition(opacity);
+
+        position: absolute;
+        right: 0;
+        top: 10px;
+        font-size: 18px;
+        color: $link-color;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: $link-color;
+            stroke: transparent;
+        }
+
+        @include screen(992) {
+            font-size: 20px;
+        }
+
+        @include screen(768) {
+            display: none;
+        }
+    }
+
+    @include screen(1199) {
+        padding-bottom: 30px; 
+    }
+
+    @include screen(991) {
+        padding-bottom: 20px;
+    }
+
+    @include screen(768) {
+        padding-bottom: 10px;
+    }
+
+}

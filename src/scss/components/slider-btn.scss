@@ -15,7 +15,7 @@
         left: 40px;
 
         @include screen(991) {
-            left: 30px;
+            left: 20px;
         }
         @include screen(768) {
             left: 10px;
@@ -29,7 +29,7 @@
         right: 40px;
 
         @include screen(991) {
-            right: 30px;
+            right: 20px;
         }
         @include screen(768) {
             right: 10px;

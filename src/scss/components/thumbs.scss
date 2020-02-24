@@ -22,4 +22,25 @@
             filter: brightness(1.1);
         }
     }
+
+    @include screen(768) {
+
+        width: 230px;
+        height: 80px;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        z-index: 10;
+        background-color: rgba(0,0,0,0.3);
+        
+        &-item {
+            @include transition(filter);
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            background-position: center;
+            background-size: cover;
+            cursor: pointer;
+        }
+    }
 }

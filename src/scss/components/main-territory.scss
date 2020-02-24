@@ -3,18 +3,50 @@
     --slide-content-width: 280px;
 
     margin-bottom: 100px;
-    
-    &__header {
-        padding-bottom: 40px;
-        font-size: 36px;
-        text-transform: uppercase;
-        text-align: center;
+
+    @include screen(1199) {
+        margin-bottom: 80px;
+    }
+    @include screen(991) {
+        margin-bottom: 60px;
+    }
+    @include screen(768) {
+        margin-bottom: 30px;
     }
 
-    &__title {
-        font-size: 36px;
-    }
     
+    // &__header {
+    //     padding-bottom: 40px;
+    //     font-size: 36px;
+    //     text-transform: uppercase;
+    //     text-align: center;
+
+    //     &-title {
+    //         font-size: 36px;
+    //     }
+
+    //     @include screen(1199) {
+    //         padding-bottom: 30px;
+
+    //         &-title {
+    //             font-size: 34px;
+    //         }  
+    //     }
+    //     @include screen(991) {
+    //         padding-bottom: 20px;
+
+    //         &-title {
+    //             font-size: 30px;
+    //         }  
+    //     }
+    //     @include screen(768) {
+    //         padding-bottom: 10px;
+
+    //         &-title {
+    //             font-size: 24px;
+    //         }  
+    //     }
+    // }    
 
     &__description {
         @extend %outer; 
@@ -23,23 +55,39 @@
         font-size: 18px;
         line-height: 150%;
         color: $light-font-color;
+
+        @include screen(768) {
+            padding-bottom: 30px;
+        }
     }
 
 
     &__slide {
         position: relative;
-        padding-left: 20px;
-        overflow: hidden;
+        padding: 0 20px;
+        // overflow: hidden;
 
         &-wrapper {
             @extend %wrapper;
-            @include flex(row);
+            @include flex(row,sb);
+
+            @include screen(768) {
+                flex-direction: column;
+            }
         }
 
         &-content {
             width: var(--slide-content-width);
             height: 650px;
             color: $light-font-color;
+
+            @include screen(1199) {
+                height: 50vw;
+            }
+            @include screen(768) {
+                width: 100%;
+                height: auto;
+            }
         }
 
         &-controls {
@@ -47,6 +95,10 @@
 
             margin-bottom: 70px;
             font-size: 24px;
+
+            @include screen(768) {
+                margin-bottom: 20px;
+            }
 
             .icon-btn svg{
                 stroke: transparent;
@@ -73,6 +125,7 @@
         }
 
         &-title {
+            margin-bottom: 20px;
             font-size: 24px;
             color: $main-font-color;
         }
@@ -90,6 +143,20 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+
+            @include screen(1199) {
+                width: calc( 100%  - var(--slide-content-width) - 40px ); // 40px - for gap
+                height: 50vw;
+                min-height: 100%;
+            }
+
+            @include screen(768) {
+                position: relative;
+                width: calc(100% + 40px);
+                height: 50vw;
+                min-height: 320px;
+                margin: 0 -20px;
+            }
         }
     }
 
@@ -98,5 +165,16 @@
         width: calc( (100% - 1180px)/2 + 1180px - var(--slide-content-width) - 20px ); // == photo width
         right: 0;
         bottom: 0;
+
+        @include screen(1199) {
+            width: calc( 100%  - var(--slide-content-width) - 40px ); // 40px - for gap
+            top: 50vw;
+            bottom: unset;
+
+        }
+
+        @include screen(768) {
+            display: none;
+        }
     }
 }
