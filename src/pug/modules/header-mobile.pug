@@ -1,0 +1,18 @@
+header.header-mobile.js-header-mobile
+    .header-mobile__wrapper
+
+        .header-mobile__hamburger.js-hamburger
+            .header-mobile__hamburger-elem
+            .header-mobile__hamburger-elem
+            .header-mobile__hamburger-elem
+
+        a.header-mobile__logo(href="/")
+            img.header-mobile__logo-img(src=require('../../images/logo.png'), alt="Logo")
+            
+
+        button.header-mobile__search-btn.icon-btn(aria-label="Search")
+            svg.icon
+                use(href="icons/icons.svg#search")
+  
+    //- .header-mobile__nav
+        include ./nav-mobile.pug

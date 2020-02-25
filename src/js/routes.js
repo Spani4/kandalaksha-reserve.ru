@@ -1,11 +1,13 @@
 import "../scss/routes.scss";
 
+import initHeaderMobile from "./modules/header-mobile";
 import collapsibleNav from "./components/collapsible-nav";
-import { initMainPageMap } from "./components/maps";
+import { initContactsMap } from "./components/maps";
 
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    initHeaderMobile();
     collapsibleNav();
-    initMainPageMap();
+    initContactsMap();
 });

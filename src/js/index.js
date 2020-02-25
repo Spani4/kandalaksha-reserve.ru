@@ -1,11 +1,13 @@
 import "../scss/main.scss";
 
 
+import initHeaderMobile from "./modules/header-mobile";
 import collapsibleNav from "./components/collapsible-nav";
 
-import { initMainPageMap } from "./components/maps";
+import { initContactsMap } from "./components/maps";
 
 import { initMainSlider, initTerritorySlider, initGallerySlider, initNewsSlider } from "./components/sliders";
+// import initSliders from "./components/sliders";
 
 
 
@@ -13,13 +15,15 @@ import { initMainSlider, initTerritorySlider, initGallerySlider, initNewsSlider 
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    initHeaderMobile();
     collapsibleNav();
     
     initMainSlider();
     initNewsSlider();
     initTerritorySlider();
     initGallerySlider();
+    // initSliders();
 
-    initMainPageMap();
+    initContactsMap();
 });
 

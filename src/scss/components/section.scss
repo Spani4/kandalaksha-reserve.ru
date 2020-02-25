@@ -1,9 +1,39 @@
-.section-header {
-    @extend %wrapper;
+.section {
 
-    position: relative;
-    height: 100%;
-    padding-bottom: 40px;
+    margin-bottom: 100px;
+
+    @include screen(1199) {
+        margin-bottom: 80px;
+    }
+    @include screen(992) {
+        margin-bottom: 60px;
+    }
+    @include screen(768) {
+        margin-bottom: 40px;
+    }
+    @include screen(575) {  
+        margin-bottom: 30px;
+    }
+
+    &__header {
+        @extend %wrapper;
+
+        position: relative;
+        height: 100%;
+        padding-bottom: 40px;
+
+        @include screen(1199) {
+            padding-bottom: 30px; 
+        }
+    
+        @include screen(991) {
+            padding-bottom: 20px;
+        }
+    
+        @include screen(768) {
+            padding-bottom: 10px;
+        }
+    }
 
     &__title {
         font-size: 36px;
@@ -52,17 +82,4 @@
             display: none;
         }
     }
-
-    @include screen(1199) {
-        padding-bottom: 30px; 
-    }
-
-    @include screen(991) {
-        padding-bottom: 20px;
-    }
-
-    @include screen(768) {
-        padding-bottom: 10px;
-    }
-
 }

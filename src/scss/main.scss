@@ -1,11 +1,13 @@
 @import "globals/global";
 
 @import "modules/header";
+@import "modules/header-mobile";
 @import "modules/nav";
+@import "modules/nav-mobile";
 @import "modules/footer";
 
 @import "components/bg";
-@import "components/section-header";
+@import "components/section";
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/slider-btn";
@@ -13,11 +15,11 @@
 @import "components/custom-text";
 @import "components/slider-progress-bar";
 
-@import "components/main-slider";
-@import "components/main-news";
-@import "components/main-territory";
-@import "components/main-gallery";
-@import "components/contacts";
+@import "modules/main-slider";
+@import "modules/main-news";
+@import "modules/main-territory";
+@import "modules/main-gallery";
+@import "modules/contacts";
 
 .main {
     position: relative;

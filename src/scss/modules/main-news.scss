@@ -1,7 +1,6 @@
 .main-news {
 
     @extend %outer;
-    margin-bottom: 100px;
     z-index: 1;
 
     &__wrapper {
@@ -93,44 +92,19 @@
 
     @include screen(1199) {
 
-        margin-bottom: 80px;
-
         &__item,
         .swiper-slide {
             height: 30vw;
         }
     }
 
-    @include screen(992) {
-
-        margin-bottom: 60px;
-
-        // &__item {
-        //     &-title {
-        //         &-text {
-        //             font-size: 20px;
-        //         }
-        //     }
-        // }
-    }
-
     @include screen(768) {
-
-        margin-bottom: 40px;
-
-        // &__header {
-
-        //     &-link {
-        //         display: none;
-        //     }
-        // }
 
         &__slider-controls-buttons {
             @include flex();
         }
 
         &__content {
-            // display: block;
             margin-bottom: 10px;
         }
 
@@ -148,11 +122,5 @@
         &__bottom-link {
             @include flex(row, c, c);
         }
-    }
-
-    @include screen(575) {
-
-        margin-bottom: 30px;
-
     }
 }

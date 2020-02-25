@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet/dist/leaflet";
 
 
-export function initMainPageMap() {
+export function initContactsMap() {
     const map = L.map('main-map').setView([67.133085, 32.417791], 13);
     
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -15,5 +15,5 @@ export function initMainPageMap() {
 }
 
 export default {
-    initMainPageMap,
+    initContactsMap,
 };

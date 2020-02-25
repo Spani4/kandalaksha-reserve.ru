@@ -1,14 +1,16 @@
 @import "globals/global";
 
 @import "modules/header";
+@import "modules/header-mobile";
 @import "modules/nav";
+@import "modules/nav-mobile";
 @import "modules/footer";
 
 @import "components/bg";
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/custom-text";
-@import "components/contacts";
+@import "modules/contacts";
 
 
 .about {

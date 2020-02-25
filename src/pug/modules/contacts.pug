@@ -1,7 +1,7 @@
-section.contacts
-    .contacts__section.section-header
-        h2.contacts__title.section-header__title КОНТАКТНАЯ ИНФОРМАЦИЯ
-    .contacts__section
+section.contacts.section
+    .contacts__section.section__header
+        h2.contacts__title.section__title КОНТАКТНАЯ ИНФОРМАЦИЯ
+    .contacts__section.section__header
         .contacts__question Хотите посетить наш заводник?
         .contacts__request Заполните простую форму заявки
     .contacts__content
@@ -10,31 +10,33 @@ section.contacts
             form.contacts__form
                 .contacts__form-row
                     input.contacts__form-input(type="text", placeholder="Выберите заповедник*")
-                .contacts__form-row
-                    .contacts__form-group
+                
+                .contacts__form-row.people-amount
+                    .contacts__form-group.people-amount
                         button.contacts__form-btn(type="button") -
                         input.contacts__form-input.hidden(value="1")                        
-                        .contacts__form-input.fake 1 взрослый
+                        .contacts__form-input.fake Взрослые: 1
                         button.contacts__form-btn(type="button") +
-                    .contacts__form-group
+                    .contacts__form-group.people-amount
                         button.contacts__form-btn(type="button") -
                         input.contacts__form-input.hidden(value="1")
-                        .contacts__form-input.fake 1 ребенок до 14 лет
+                        .contacts__form-input.fake Дети до 14 лет: 1
                         button.contacts__form-btn(type="button") +
+                
                 .contacts__form-row
                     input.contacts__form-input(type="text" placeholder="ФИО контактного лица*")
+                
                 .contacts__form-row
                     .contacts__form-group
                         input.contacts__form-input(type="text", placeholder="+7 (__) ___ __ __*")
                     .contacts__form-group
                         input.contacts__form-input(type="email", placeholder="ivanov@gmail.com")
+               
                 .contacts__form-row
                     .contacts__form-group
                         label.input.contacts__form-label.date
                             input.contacts__form-input.date(type="date")
                             .input.contacts__form-label-text Дата приезда
-
-
                     .contacts__form-group
                         label.input.contacts__form-label.date
                             input.contacts__form-input.date(type="date")

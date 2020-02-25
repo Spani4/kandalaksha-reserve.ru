@@ -1,0 +1,13 @@
+.nav-mobile {
+
+    @extend %outer;
+
+    position: relative;
+
+    &__list {
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

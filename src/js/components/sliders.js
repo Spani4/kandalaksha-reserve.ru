@@ -11,7 +11,9 @@ const swipers = [];
     setInterval(() => {
 
         if ( swipers.length === 0 ) return;
-
+        // на мобиле нет прогресс бара
+        if ( swipers[0].progressBar.offsetHeight === 0) return;
+        
         swipers.forEach(swiper => {
 
             if ( swiper.slideProgress > 0 && swiper.slideProgress < 100 ) {
@@ -130,11 +132,9 @@ export function initNewsSlider() {
 }
 
 
-
 export default function() {
 
     initMainSlider();
     initTerritorySlider();
     initGallerySlider();
-
 }

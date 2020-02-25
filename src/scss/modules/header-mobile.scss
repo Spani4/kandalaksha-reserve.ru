@@ -1,0 +1,90 @@
+.header-mobile {
+
+    $height: 60px;
+
+    @extend %outer;
+
+    position: fixed;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 11vw;
+    min-height: $height;
+    z-index: 1000;
+    background-color: $bg-color;
+    box-shadow: 0 2px 3px -1px $light-font-color;
+
+    @include screen(768) {
+        display: block;
+    }
+
+    &__wrapper {
+        @include flex(row, sb, c);
+
+        height: 100%;
+    }
+
+    &__hamburger {
+        @include flex(col, sb, s);
+        height: 21px;
+
+        &-elem {
+            width: 30px;
+            height: 3px;
+            border-radius: 3px;
+            background-color: $main-font-color;
+
+            transition: transform .4s, opacity .4s;
+            transform-origin: left center;
+
+            &:last-child {
+                width: 15px;
+            }
+        }
+
+        &.close {
+            margin-left: 6px; // (width:30px) - (width:24px)
+        }
+
+        &.close &-elem {
+            width: 24px;
+            
+            &:nth-child(1) {
+                transform: rotateZ(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                width: 100%;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+
+    &__logo-img {
+        display: block;
+        width: 8.5vw;
+        height: 8.5vw;
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    &__search-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 100%);
+        left: 0;
+        top: 100%;
+
+        overflow-y: auto;
+        border-top: 1px solid $color2;
+        background-color: inherit;
+    }
+}

@@ -1,7 +1,5 @@
 .main-gallery {
 
-    margin-bottom: 100px;
-
     &__wrapper {
         @extend %outer;
     } 
@@ -12,6 +10,10 @@
         &-btn {
             top: 240px;
             z-index: 10;
+
+            @include screen(768) {
+                display: none;
+            }
         }
     }
 

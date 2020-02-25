@@ -1,7 +1,6 @@
 .main-slider {
 
     position: relative;
-    margin-bottom: 100px;
 
     &__btn {
         top: 430px;
@@ -29,7 +28,7 @@
             height: 980px;
         }
         @include screen(991) {
-            height: 850px;
+            height: 800px;
         }
         @include screen(768) {
             height: 700px;
@@ -45,10 +44,10 @@
             padding-top: 240px;
 
             @include screen(1199) {
-                padding-top: 200px;
+                padding-top: 190px;
             }
             @include screen(991) {
-                padding-top: 150px;
+                padding-top: 140px;
             }
             @include screen(768) {
                 padding-top: 100px;
@@ -139,7 +138,6 @@
             }
         }
 
-
         &-stats {
 
             position: absolute;
@@ -222,25 +220,4 @@
             }
         }
     }
-
-    @include screen(1199) {
-
-        margin-bottom: 80px;
-    }
-
-    @include screen(992) {
-
-        margin-bottom: 60px;
-    }
-
-    @include screen(768) {
-
-        margin-bottom: 40px;
-    }
-
-    @include screen(575) {
-        
-        margin-bottom: 30px;
-    }
-
 }

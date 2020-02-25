@@ -5,6 +5,10 @@
     @extend %outer;
     height: $header-height;
 
+    @include screen(768) {
+        display: none;
+    }
+
     &__wrapper {
         @extend %wrapper;
         @include flex(col,s,s);
@@ -28,9 +32,10 @@
         left: 300px;
         top: 0;
 
-        @include screen(850) {
-            display: none;
+        @include screen(991) {
+            left: 37%;
         }
+
     }
 
 
@@ -62,6 +67,10 @@
         right: 160px;
         top: 20px;
 
+        @include screen(991) {
+            right: 130px;
+        }
+
         &-btn {
             width: 30px;
             height: 30px;
@@ -86,6 +95,10 @@
         position: absolute;
         right: 100px;
         top: 20px;
+
+        @include screen(991) {
+            right: 78px;
+        }
 
         &:hover {
             .icon {
