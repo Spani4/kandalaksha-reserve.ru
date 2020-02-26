@@ -14,6 +14,11 @@
         --form-width: 100%;
     }
 
+    .icon {
+        stroke: transparent;
+        fill: $link-color;
+    }
+
     &__wrapper {
         @extend %wrapper;
         
@@ -129,7 +134,7 @@
                 &:focus {
                     width: 100%;
 
-                    & + .input.main-contacts__form-label-text {
+                    & + .input.contacts__form-label-text {
                         display: none;
                     }
                 }
@@ -137,6 +142,7 @@
         }
 
         &-label {
+            position: relative;
             width: 100%;
             line-height: $form-elem-height;
 
@@ -146,6 +152,14 @@
 
             &-text {
                 margin-left: -10px;
+
+                .icon {
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    right: 5%;
+                    top: 8px;
+                }
             }
         }
 
@@ -164,8 +178,6 @@
                 width: 20px;
                 height: 20px;
                 margin-right: 5px;
-                stroke: $link-color;
-                fill: $link-color;
             }
         }
 

@@ -74,7 +74,6 @@
             @include screen(420) {
                 margin: 0 0 20px;
             }
-    
         }
 
         &-img {
@@ -90,10 +89,15 @@
     &__phone {
         min-width: 195px;
         word-break: keep-all;
-    }
 
+    }
+    
     &__address {
         width: 350px;
+        
+        @include screen(420) {
+            width: auto;
+        }
     }
 
 

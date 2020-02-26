@@ -7,9 +7,12 @@ section.main-gallery.section
                     use(href="icons/icons.svg#arr-right-2")
     .main-gallery__slider
         .main-gallery__thumbs.thumbs
-            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`)
-            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-2.jpg')}')`)
-            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-3.jpg')}')`)
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`,
+                data-bg-img=`${require('../../images/thumb-1.jpg')}`)
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`,
+                data-bg-img=`${require('../../images/thumb-2.jpg')}`)
+            .territory__slide-thumbs-item.thumbs-item(style=`background-image: url('${require('../../images/thumb-1.jpg')}')`,
+                data-bg-img=`${require('../../images/thumb-3.jpg')}`)
         .main-gallery__slider-container.swiper-container
             .main-gallery__progress-bar.slider-progress-bar  
             button.main-gallery__slider-btn.left.slider-btn.icon-btn
@@ -20,7 +23,8 @@ section.main-gallery.section
                     use(href="icons/icons.svg#arr-right")
             .main-gallery__slider-wrapper.swiper-wrapper
                 each i in [1,2,3]
-                    .main-gallery__slide.swiper-slide(style=`background-image: url('${require('../../images/gallery-image-1.jpg')}')`)
+                    .main-gallery__slide.swiper-slide(style=`background-image: url('${require('../../images/gallery-image-1.jpg')}')`,
+                        data-bg-img=`${require('../../images/gallery-image-1.jpg')}`)
 
 
 

@@ -27,7 +27,20 @@
 
     &__hamburger {
         @include flex(col, sb, s);
+
+        position: relative;
         height: 21px;
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -15px;
+            right: -15px;
+            top: -10px;
+            bottom: -10px;
+        }
+
 
         &-elem {
             width: 30px;
@@ -43,12 +56,8 @@
             }
         }
 
-        &.close {
-            margin-left: 6px; // (width:30px) - (width:24px)
-        }
-
         &.close &-elem {
-            width: 24px;
+            width: 25px;
             
             &:nth-child(1) {
                 transform: rotateZ(45deg);
@@ -86,5 +95,11 @@
         overflow-y: auto;
         border-top: 1px solid $color2;
         background-color: inherit;
+
+        transition: all .3s;;
+
+        &.hidden {
+            height: 0;
+        }
     }
 }

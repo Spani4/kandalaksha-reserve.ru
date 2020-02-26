@@ -1,4 +1,4 @@
-- calendar icons
-- calendar inputs
-- progress bars
 - nav collapsible items style
+- contacts vue
+- contacts 1st input => select
+- lazy

@@ -113,7 +113,8 @@ export function initNewsSlider() {
     const swiper = new Swiper(swiperContainer, {
         slidesPerView: 1,
         speed: 500,
-        
+        loop: true,
+
         navigation: {
             prevEl: '.main-news .btn-prev',
             nextEl: '.main-news .btn-next'
@@ -121,6 +122,11 @@ export function initNewsSlider() {
 
         breakpoints: {
             769: {
+                allowTouchMove: false,
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            992: {
                 allowTouchMove: false,
                 slidesPerView: 3,
                 spaceBetween: 20,
@@ -132,9 +138,10 @@ export function initNewsSlider() {
 }
 
 
-export default function() {
+export default function initMainSliders() {
 
     initMainSlider();
+    initNewsSlider();
     initTerritorySlider();
     initGallerySlider();
 }

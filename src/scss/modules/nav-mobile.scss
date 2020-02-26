@@ -1,13 +1,51 @@
 .nav-mobile {
 
     @extend %outer;
-
     position: relative;
 
-    &__list {
+    &.hidden {
+        display: none;
+    }
+    
+    &__item {
+        position: relative;
+        height: 40px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 10%;
+        overflow: hidden;
+        transition: all .3s;
 
-        &.hidden {
-            display: none;
+        &.active {
+            height: auto;
+
+            & > .nav-mobile__link {
+                color: $link-color;
+            }
         }
+
+        &.container::after {
+            content: "";
+            position: absolute;
+            left: 2%;
+            top: 15px;
+            border-width: 5px;
+            border-color: transparent transparent transparent $main-font-color;
+            border-style: solid;
+            
+            transition: all .3s;
+            transform-origin: 25% 50%;
+        }
+
+        &.container.active::after {
+            transform: rotateZ(90deg);
+            border-color: transparent transparent transparent $link-color;
+        }
+    }
+
+    &__link {
+        display: block;
+        height: 100%;
+        line-height: 34px;
     }
 }
