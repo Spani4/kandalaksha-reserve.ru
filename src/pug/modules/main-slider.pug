@@ -10,8 +10,7 @@ section.main-slider.section
 
         .swiper-wrapper
             each i in [1,2,3]
-                .main-slider__slide.swiper-slide(style=`background-image: url(${require('../../images/main-slider-image-1.jpg')}), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);`,
-                    data-bg-img=`${require('../../images/main-slider-image-1.jpg')}, radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%);`)
+                .main-slider__slide.swiper-slide.js-lazy(data-bg=`url(${require('../../images/main-slider-image-1.jpg')}), radial-gradient(53.43% 53.43% at 60.55% 46.57%, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%)`)
                     .main-slider__slide-wrapper
                         .main-slider__slide-info
                             .main-slider__slide-title УТКА ГАГА ОБЫКНОВЕННАЯ
@@ -33,16 +32,16 @@ section.main-slider.section
 
 
                         .main-slider__slide-social
-                            a.link-social(href="#")
+                            a.link-social(href="#", aria-label="vkontakte")
                                 svg.icon
                                     use(href="icons/icons.svg#vk")
-                            a.link-social(href="#")
+                            a.link-social(href="#", aria-label="twitter")
                                 svg.icon
                                     use(href="icons/icons.svg#twitter")
-                            a.link-social(href="#")
+                            a.link-social(href="#", aria-label="facebook")
                                 svg.icon
                                     use(href="icons/icons.svg#facebook")
-                            a.link-social(href="#")
+                            a.link-social(href="#", aria-label="Одноклассники")
                                 svg.icon
                                     use(href="icons/icons.svg#ok")   
 

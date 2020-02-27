@@ -2,6 +2,8 @@ import "swiper/css/swiper.min.css";
 
 import Swiper from "swiper";
 
+import sliderConfig from "../configs/sliders";
+
 const swipers = [];
 
 (function setTimer() {
@@ -51,18 +53,17 @@ export function initMainSlider() {
     const swiperContainer = section.querySelector('.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
 
-    const swiper = new Swiper(swiperContainer, {
-        loop: true,
-        slidesPerView: 1,
-        speed: 500,
-        
-        navigation: {
-            prevEl: '.slider-btn.left',
-            nextEl: '.slider-btn.right'
-        },
-    });
+    const swiper = new Swiper(swiperContainer, sliderConfig.main);
 
     initSlider(swiper, progressBar);
+}
+
+export function initNewsSlider() {
+
+    const section = document.querySelector('.main-news');
+    const swiperContainer = section.querySelector('.swiper-container');
+
+    const swiper = new Swiper(swiperContainer, sliderConfig.news);
 }
 
 export function initTerritorySlider() {
@@ -71,16 +72,7 @@ export function initTerritorySlider() {
     const swiperContainer = section.querySelector('.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
 
-    const swiper = new Swiper(swiperContainer, {
-        loop: true,
-        slidesPerView: 1,
-        speed: 500,
-        
-        navigation: {
-            prevEl: '.main-territory.btn-prev',
-            nextEl: '.main-territory.btn-next'
-        },
-    });
+    const swiper = new Swiper(swiperContainer, sliderConfig.territory);
 
     initSlider(swiper, progressBar);
 }
@@ -91,50 +83,9 @@ export function initGallerySlider() {
     const swiperContainer = section.querySelector('.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
 
-    const swiper = new Swiper(swiperContainer, {
-        loop: true,
-        slidesPerView: 1,
-        speed: 500,
-        
-        navigation: {
-            prevEl: '.slider-btn.left',
-            nextEl: '.slider-btn.right'
-        },
-    });
+    const swiper = new Swiper(swiperContainer, sliderConfig.gallery);
 
     initSlider(swiper, progressBar);
-}
-
-export function initNewsSlider() {
-
-    const section = document.querySelector('.main-news');
-    const swiperContainer = section.querySelector('.swiper-container');
-
-    const swiper = new Swiper(swiperContainer, {
-        slidesPerView: 1,
-        speed: 500,
-        loop: true,
-
-        navigation: {
-            prevEl: '.main-news .btn-prev',
-            nextEl: '.main-news .btn-next'
-        },
-
-        breakpoints: {
-            769: {
-                allowTouchMove: false,
-                slidesPerView: 3,
-                spaceBetween: 10,
-            },
-            992: {
-                allowTouchMove: false,
-                slidesPerView: 3,
-                spaceBetween: 20,
-            }
-        },
-    });
-
-
 }
 
 

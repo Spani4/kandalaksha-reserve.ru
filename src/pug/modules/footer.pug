@@ -3,7 +3,7 @@ footer.footer
         .footer__contacts
             .footer__contacts-elem.footer__logo
                 a.footer__logo-link(href="#")
-                    img.footer__logo-img(src=require("../../images/footer-logo.svg"))
+                    img.footer__logo-img(src=require("../../images/footer-logo.svg"), alt="КАНДАЛАКШСКИЙ государственный заповедник")
             a.footer__contacts-elem.footer__phone(href="#")
                 svg.icon.footer__contacts-icon
                     use(href="icons/icons.svg#phone")
@@ -19,18 +19,18 @@ footer.footer
 
 
         .footer__social
-            a.link-social(href="#")
+            a.link-social(href="#", aria-label="vkontakte")
                 svg.icon
                     use(href="icons/icons.svg#vk")
-            a.link-social(href="#")
+            a.link-social(href="#", aria-label="twitter")
                 svg.icon
                     use(href="icons/icons.svg#twitter")
-            a.link-social(href="#")
+            a.link-social(href="#", aria-label="facebook")
                 svg.icon
                     use(href="icons/icons.svg#facebook")
-            a.link-social(href="#")
+            a.link-social(href="#", aria-label="Одноклассники")
                 svg.icon
-                    use(href="icons/icons.svg#ok")
+                    use(href="icons/icons.svg#ok")   
 
 
         .footer__copyright &copy;&nbsp;

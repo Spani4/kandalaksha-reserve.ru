@@ -17,18 +17,15 @@ section.main-news.section
         .main-news__content
             .swiper-container
                 .main-news__content.swiper-wrapper
-                    a.main-news__item.swiper-slide(href="#", style=`background-image: url(${require('../../images/news-item-1.jpg')})`,
-                        data-bg-img=`${require('../../images/news-item-1.jpg')}`)
-                            .main-news__item-title
-                                h3.main-news__item-title-text Итоги кольцевания птиц
-                    a.main-news__item.swiper-slide(href="#", style=`background-image: url(${require('../../images/news-item-2.jpg')})`,
-                        data-bg-img=`${require('../../images/news-item-2.jpg')}`)
-                            .main-news__item-title
-                                h3.main-news__item-title-text Акция "Покормите птиц зимой"
-                    a.main-news__item.swiper-slide(href="#", style=`background-image: url(${require('../../images/news-item-3.jpg')})`,
-                        data-bg-img=`${require('../../images/news-item-3.jpg')}`)
-                            .main-news__item-title
-                                h3.main-news__item-title-text Фотовыставка "Живые страницы природы"
+                    a.main-news__item.swiper-slide(href="#", data-bg=`url(${require('../../images/news-item-1.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Итоги кольцевания птиц
+                    a.main-news__item.swiper-slide(href="#", data-bg=`url(${require('../../images/news-item-2.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Акция "Покормите птиц зимой"
+                    a.main-news__item.swiper-slide(href="#", data-bg=`url(${require('../../images/news-item-3.jpg')})`)
+                        .main-news__item-title
+                            h3.main-news__item-title-text Фотовыставка "Живые страницы природы"
 
         a.main-news__bottom-link.main-news__link(href="#") Все новости &nbsp;
             svg.icon
