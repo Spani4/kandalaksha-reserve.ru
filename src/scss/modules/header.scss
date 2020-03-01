@@ -5,6 +5,8 @@
     @extend %outer;
     height: $header-height;
 
+    background-color: $bg-color;
+
     @include screen(768) {
         display: none;
     }

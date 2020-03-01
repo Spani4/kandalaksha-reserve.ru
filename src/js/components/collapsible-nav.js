@@ -24,7 +24,6 @@ function adjustItems() {
         if ( nav.offsetWidth - btn.offsetWidth - visibleNav.offsetWidth > 150) {
             pushItem(item);
         }
-        // pushItem(item);
     });
 }
 
@@ -51,10 +50,10 @@ function checkNavContent() {
     adjustBtn();
 }
 
-function handleResize() {
+// function handleResize() {
 
-    checkNavContent();
-}
+//     checkNavContent();
+// }
 
 
 export default function() {
@@ -63,7 +62,8 @@ export default function() {
     adjustBtn();
 
     window.addEventListener('resize', () => {
-        handleResize();
+        checkNavContent();
+        adjustItems();
     });
 
 }

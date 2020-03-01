@@ -1,0 +1,14 @@
+extends ../layout/layout.pug
+
+block content
+    main.gallery
+        .gallery__wrapper
+            h2.gallery__title.page-title ФОТОГАЛЕРЕЯ
+            .gallery__albums
+                - var arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                each i in arr
+                    .gallery__albums-item
+                        a.gallery__albums-image(href="album.html", data-bg=`url(${require('../../images/gallery-item.jpg')})`, aria-label="Альбом")
+                            .gallery__albums-description
+                                .gallery__albums-text Кандалакшский залив Белого моря
+

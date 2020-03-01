@@ -47,7 +47,6 @@ export default {
         },
 
         setPhone(e) {
-            console.log(e.detail);
             this.phone = e.detail.unmaskedValue;
         }
     },
@@ -58,9 +57,7 @@ export default {
         imask: IMaskDirective,
     },
 
-    created() {
-        console.log('Form created');
-    }
+    created() {}
 };
 </script>
 

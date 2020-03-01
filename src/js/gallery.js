@@ -1,4 +1,6 @@
-import "../scss/museum.scss";
+import "../scss/gallery.scss";
+
+import LazyLoad from "vanilla-lazyload";
 
 import initHeaderMobile from "./modules/header-mobile";
 import initNavMobile from "./modules/nav-mobile";
@@ -12,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavMobile();
     initHeaderMobile();
     collapsibleNav();
+
+    const lazyLoader = new LazyLoad({
+        elements_selector: '[data-bg], [data-src]',
+    });
+
     initContactsForm();
     initContactsMap();
 });

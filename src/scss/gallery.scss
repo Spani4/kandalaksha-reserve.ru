@@ -1,0 +1,131 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/header-mobile";
+@import "modules/nav";
+@import "modules/nav-mobile";
+@import "modules/footer";
+@import "modules/contacts";
+
+@import "components/section";
+@import "components/bg";
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/page-title";
+
+
+.gallery {
+
+    @extend %outer;
+
+    position: relative;
+
+    @include screen(768) {
+        padding-top: 11vw;
+    }
+
+    @include screen(575) {
+        padding-top: 60px;
+    }
+    
+    &__wrapper {
+        @extend %wrapper;
+        margin-bottom: 80px;
+
+        @include screen(1199) {
+            margin-bottom: 80px;
+        }
+        @include screen(992) {
+            margin-bottom: 60px;
+        }
+        @include screen(768) {
+            margin-bottom: 40px;
+        }
+        @include screen(575) {  
+            margin-bottom: 30px;
+        }
+    }
+
+    &__albums {
+
+        @include flex(row, fs, fs, wrap);
+
+        margin-left: -10px;
+        margin-right: -10px;
+        
+        @include screen(991) {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        
+        &-item {
+            position: relative;
+            width: 33.333333%;
+            height: 380px;
+            padding: 0 10px;
+            margin-bottom: 30px;
+
+            @include screen(1199) {
+                height: 30vw;
+            }
+
+            @include screen(991) {
+                width: 50%;
+                height: 45vw;
+            }
+
+            @include screen(768) {
+                width: 100%;
+                height: 98vw;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-image {
+            @include transition(box-shadow);
+
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            background-color: #f2f2f2;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            &:hover {
+                box-shadow: 0 2px 5px 2px grey;
+            }
+        }
+
+        &-description {
+            position: absolute;
+            @include flex(row, s, c);
+            width: 100%;
+            height: 90px;
+            padding: 10px;
+            bottom: 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+        }
+
+        &-text {
+            // position: absolute;
+            width: 100%;
+            top: 0;
+            font-size: 24px;
+            text-align: center;
+            color: $bg-color;
+
+            @include screen(991) {
+                font-size: 20px;
+            }
+
+            // @include screen(768) {
+            //     font-size: 18px;
+            // }
+        }
+    }
+}

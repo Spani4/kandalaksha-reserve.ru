@@ -88,6 +88,17 @@ export function initGallerySlider() {
     initSlider(swiper, progressBar);
 }
 
+export function initAlbumSlider() {
+
+    const section = document.querySelector('.album__slider');
+    const swiperContainer = section.querySelector('.swiper-container');
+
+    const swiper = new Swiper(swiperContainer, sliderConfig.album);
+
+    return [ section, swiper ];
+
+}
+
 
 export default function initMainSliders() {
 

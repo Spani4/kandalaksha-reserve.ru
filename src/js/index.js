@@ -25,15 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavMobile();
     collapsibleNav();
     
-    // initMainSlider();
-    // initNewsSlider();
-    // initTerritorySlider();
-    // initGallerySlider();
     initMainSliders();
-    // initLazyImages();
 
     const lazyLoader = new LazyLoad({
-        elements_selector: '[data-bg]',
+        elements_selector: '[data-bg], [data-src]',
     });
 
     initContactsForm();

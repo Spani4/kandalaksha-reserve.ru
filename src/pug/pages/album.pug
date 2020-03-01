@@ -1,0 +1,34 @@
+extends ../layout/layout.pug
+
+block content
+    main.album
+        .album__wrapper
+            h2.album__title.page-title НАЗВАНИЕ АЛЬБОМА
+            .album__photos
+                - var arr = [0,0,0,0,0,0,0,0,0]
+                each i in arr
+                    .album__photos-item
+                        img.album__photos-image.js-image(href="#", data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
+                    .album__photos-item
+                        img.album__photos-image.js-image(href="#", data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")
+            a.album__link(href="gallery.html")
+                svg.icon
+                    use(href="icons/icons.svg#arr-left-2")
+                span &nbsp;Назад к альбомам
+
+        .album__slider.hidden
+            .album__slider-container.swiper-container
+                button.album__slider-close-btn.js-close &times;
+                button.album__slider-btn.left.slider-btn.icon-btn
+                    svg.icon
+                        use(href="icons/icons.svg#arr-left")
+                button.album__slider-btn.right.slider-btn.icon-btn
+                    svg.icon
+                        use(href="icons/icons.svg#arr-right")
+                .album__slider-wrapper.swiper-wrapper
+                    - var arr = [0,0,0,0,0,0,0,0,0]
+                    each i in arr
+                        .album__photos-item.album__slider-slide.swiper-slide
+                            img.album__slider-image(href="#", data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
+                        .album__photos-item.swiper-slide
+                            img.album__slider-image(href="#", data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")

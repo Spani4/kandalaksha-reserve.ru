@@ -3,6 +3,7 @@
     @extend %outer;
     border-top: 1px solid $color2;
     font: $roboto-18;
+    background-color: $bg-color;
 
     &__wrapper {
         @extend %wrapper;
@@ -44,7 +45,7 @@
                 @include screen(768) {
                     margin: 0 0 20px;
                 }
-                @include screen(480) {
+                @include screen(479) {
                     justify-content: start;
                 }
                 @include screen(420) {

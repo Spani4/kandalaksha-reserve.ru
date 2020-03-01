@@ -2,13 +2,13 @@
     width: $max-width;
     margin: 0 auto;
 
-    @include screen(1200) {
+    @include screen(1199) {
         width: 100%;
     }
 }
 
 %outer {
-    @include screen(1200) {
+    @include screen(1199) {
         padding-left: 20px;
         padding-right: 20px;
     }

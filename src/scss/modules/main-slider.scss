@@ -33,7 +33,7 @@
         @include screen(768) {
             height: 700px;
         }
-        @include screen(480) {
+        @include screen(479) {
             height: 580px;
             background-position: center;
         }
@@ -52,7 +52,7 @@
             @include screen(768) {
                 padding-top: 100px;
             }
-            @include screen(480) {
+            @include screen(479) {
                 padding-top: 70px;
             }
         }
@@ -79,7 +79,7 @@
                 width: auto;
                 padding: 0 30px;
             }
-            @include screen(480) {
+            @include screen(479) {
                 width: auto;
                 padding: 0 20px;
             }
@@ -113,7 +113,7 @@
                 font-size: 16px;
             }
         }
-        @include screen(480) {
+        @include screen(479) {
             &-title {
                 font-size: 24px;
             }

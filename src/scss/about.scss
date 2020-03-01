@@ -5,12 +5,14 @@
 @import "modules/nav";
 @import "modules/nav-mobile";
 @import "modules/footer";
+@import "modules/contacts";
 
+@import "components/section";
 @import "components/bg";
 @import "components/link-social";
 @import "components/icon-btn";
 @import "components/custom-text";
-@import "modules/contacts";
+@import "components/page-title";
 
 
 .about {
@@ -18,16 +20,29 @@
     @extend %outer;
 
     position: relative;
+
+    @include screen(768) {
+        padding-top: 11vw;
+    }
+    @include screen(575) {
+        padding-top: 60px;
+    }
     
     &__wrapper {
         @extend %wrapper;
         margin-bottom: 80px;
-    }
 
-    &__title {
-        margin: 60px 0;
-        font-size: 36px;
-        text-align: center;
-        text-transform: uppercase;
+        @include screen(1199) {
+            margin-bottom: 80px;
+        }
+        @include screen(992) {
+            margin-bottom: 60px;
+        }
+        @include screen(768) {
+            margin-bottom: 40px;
+        }
+        @include screen(575) {  
+            margin-bottom: 30px;
+        }
     }
 }

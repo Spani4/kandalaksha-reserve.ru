@@ -61,4 +61,22 @@ export default {
             nextEl: '.slider-btn.right'
         },
     },
+
+    album: {
+        slidesPerView: 1,
+        speed: 400,
+        init: false,
+        
+        navigation: {
+            prevEl: '.slider-btn.left',
+            nextEl: '.slider-btn.right',
+            disabledClass: 'disabled',
+        },
+
+        on: {
+            init: function() {
+                this.ready = true;
+            },
+        },
+    },
 };
