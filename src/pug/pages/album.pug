@@ -8,27 +8,27 @@ block content
                 - var arr = [0,0,0,0,0,0,0,0,0]
                 each i in arr
                     .album__photos-item
-                        img.album__photos-image.js-image(href="#", data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
+                        img.album__photos-image.js-open-slider(data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
                     .album__photos-item
-                        img.album__photos-image.js-image(href="#", data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")
+                        img.album__photos-image.js-open-slider(data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")
             a.album__link(href="gallery.html")
                 svg.icon
                     use(href="icons/icons.svg#arr-left-2")
                 span &nbsp;Назад к альбомам
 
-        .album__slider.hidden
-            .album__slider-container.swiper-container
-                button.album__slider-close-btn.js-close &times;
-                button.album__slider-btn.left.slider-btn.icon-btn
+        .album__slider.popup-slider.hidden
+            .popup-slider__container.swiper-container
+                button.popup-slider__close-btn.js-close &times;
+                button.popup-slider__btn.left.slider-btn.icon-btn
                     svg.icon
                         use(href="icons/icons.svg#arr-left")
-                button.album__slider-btn.right.slider-btn.icon-btn
+                button.popup-slider__btn.right.slider-btn.icon-btn
                     svg.icon
                         use(href="icons/icons.svg#arr-right")
-                .album__slider-wrapper.swiper-wrapper
+                .popup-slider__wrapper.swiper-wrapper
                     - var arr = [0,0,0,0,0,0,0,0,0]
                     each i in arr
-                        .album__photos-item.album__slider-slide.swiper-slide
-                            img.album__slider-image(href="#", data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
+                        .album__photos-item.popup-slider__slide.swiper-slide
+                            img.popup-slider__image(data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
                         .album__photos-item.swiper-slide
-                            img.album__slider-image(href="#", data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")
+                            img.popup-slider__image(data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")

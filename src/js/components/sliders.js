@@ -88,14 +88,39 @@ export function initGallerySlider() {
     initSlider(swiper, progressBar);
 }
 
-export function initAlbumSlider() {
+export function initPopupSlider(section, images) {
 
-    const section = document.querySelector('.album__slider');
     const swiperContainer = section.querySelector('.swiper-container');
 
-    const swiper = new Swiper(swiperContainer, sliderConfig.album);
+    const swiper = new Swiper(swiperContainer, sliderConfig.popup);
+    const closeBtn = section.querySelector('.js-close');
 
-    return [ section, swiper ];
+    images.forEach( (image, i) => {
+
+        image.addEventListener('click', () => {
+
+            section.classList.remove('hidden');
+            if ( !swiper.ready ) swiper.init();
+            swiper.slideTo(i, 0);
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        section.classList.add('hidden');
+    });
+
+    section.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    });
+
+}
+
+export function initPagesSlider() {
+
+    const section = document.querySelector('.pages__photos');
+    const swiperContainer = section.querySelector('.swiper-container');
+
+    const swiper = new Swiper(swiperContainer, sliderConfig.pages);
 
 }
 

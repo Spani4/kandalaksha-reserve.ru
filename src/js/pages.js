@@ -1,4 +1,4 @@
-import "../scss/album.scss";
+import "../scss/pages.scss";
 
 import LazyLoad from "vanilla-lazyload";
 
@@ -7,28 +7,27 @@ import initNavMobile from "./modules/nav-mobile";
 import collapsibleNav from "./components/collapsible-nav";
 import { initContactsMap } from "./components/maps";
 import initContactsForm from "./components/contacts-form";
-
-import { initPopupSlider } from "./components/sliders";
-
-
-
+import { initPopupSlider, initPagesSlider } from "./components/sliders";
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const section = document.querySelector('.album__slider');
-    const images = document.querySelectorAll('.js-open-slider');
 
     initNavMobile();
     initHeaderMobile();
     collapsibleNav();
 
-    const lazyLoader = new LazyLoad({
-        elements_selector: '[data-bg], [data-src]',
-    });
+    const images = document.querySelectorAll('.js-open-slider');
 
-    // initSlider();
-    initPopupSlider(section, images);
+    if ( images.length ) {
+        const section = document.querySelector('.pages__popup-slider');
+        initPagesSlider();
+        initPopupSlider(section, images);
+
+        const lazyLoader = new LazyLoad({
+            elements_selector: '[data-bg], [data-src]',
+        });
+    }
+
     initContactsForm();
     initContactsMap();
 });
