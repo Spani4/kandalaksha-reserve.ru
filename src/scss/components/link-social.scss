@@ -1,7 +1,8 @@
 .link-social {
+    @extend %centered;
+
     width: 30px;
     height: 30px;
-    padding: 6px;
     border-width: 1px;
     border-style: solid;
     border-radius: 50%;
@@ -13,7 +14,7 @@
     }
 
     .icon {
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
     }
 }

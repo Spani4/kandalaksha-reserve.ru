@@ -64,6 +64,8 @@
 
         &-row {
             @include flex(row, sb); 
+            
+            position: relative;
 
             @include screen(991) {
                 flex-direction: column;
@@ -93,6 +95,48 @@
 
             @include screen(585) {
                 width: 100%;;
+            }
+        }
+
+        &-reserve {
+
+            &-picker {
+                width: 100%;
+            }
+
+            &-list {
+                position: absolute;
+                width: 100%;
+                top: $form-elem-height;
+                z-index: 10;
+                overflow: hidden;
+                background-color: $bg-color;
+                box-shadow: 0 3px 3px grey;
+
+                &.hidden {
+                    display: none;
+                }
+            }
+            
+            &-item {
+                // @include transition(all);
+
+                display: block;
+                height: $form-elem-height;
+                padding: 0 20px;
+                line-height: $form-elem-height;
+                color: $main-font-color;
+                white-space: nowrap;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $bg-color;
+                }
+            }
+
+            &-radio {
+                display: none;
             }
         }
 
@@ -220,6 +264,15 @@
                 background-color: $bg-color;
                 color: $theme-color;
             }
+        }
+
+        &-errors {
+            position: absolute;
+            min-width: 50%;
+            left: 200px;
+            top: 0;
+            color: rgb(200, 37, 37);
+            font-size: 14px;
         }
     }
 
