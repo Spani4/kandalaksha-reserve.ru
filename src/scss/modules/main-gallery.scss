@@ -17,14 +17,19 @@
         }
     }
 
-    &__slide {
+    &__slide.swiper-slide {
         height: 580px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
 
-        &.swiper-slide {
-            height: 580px;
+        @include screen(768) {
+
+            height: 400px;
+        }
+        @include screen(585) {
+
+            height: 320px;
         }
     }
 }

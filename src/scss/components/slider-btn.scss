@@ -42,4 +42,8 @@
     .icon {
         stroke: $color1;
     }
+
+    &.disabled {
+        display: none;
+    }
 }

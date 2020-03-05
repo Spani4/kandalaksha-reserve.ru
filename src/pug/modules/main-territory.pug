@@ -4,14 +4,14 @@ section.main-territory.section
     .main-territory__description
         p Территория Кандалакшского заповедника состоит из 13 участков, расположенных вокруг Кольского полуострова от границ с Норвегией в Баренцевом море до Республики Карелия в Белом море. Большинство участков представляют собой морские архипелаги с прилегающей акваторией. В состав заповедника входит не только суша, но и морская акватория, которая составляет 74,2 % от общей площади и имеет большое значение для существования морских птиц.
     .main-territory__content
-        .main-territory__slider.swiper-container
+        .main-territory__slider.slider.swiper-container
             .main-territory__progress-bar
                 .slider-progress-bar  
             .main-territory__slider-wrapper.swiper-wrapper
 
-                - var arr = [1,2]
+                - var arr = [1,2,3,4,5]
                 each i in arr
-                    .main-territory__slide.swiper-slide
+                    .main-territory__slide.slider.swiper-slide
                         .main-territory__slide-wrapper
                                 .main-territory__slide-content
                                     .main-territory__slide-controls
@@ -31,9 +31,12 @@ section.main-territory.section
                                             p Острова включены в заповедник в 1947 году.
                                             p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
                                 .main-territory__slide-photo(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-                                    .main-territory__slide-thumbs.thumbs
-                                        .main-territory__slide-thumbs-item.thumbs-item(data-bg=`url(${require('../../images/thumb-1.jpg')})`)
-                                        .main-territory__slide-thumbs-item.thumbs-item(data-bg=`url(${require('../../images/thumb-2.jpg')})`)
-                                        .main-territory__slide-thumbs-item.thumbs-item(data-bg=`url(${require('../../images/thumb-3.jpg')})`)
-
+            .main-territory__thumbs.thumbs
+                .swiper-container
+                    .swiper-wrapper
+                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
 

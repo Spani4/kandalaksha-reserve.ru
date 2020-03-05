@@ -22,7 +22,7 @@ const swipers = [];
                 swiper.slideProgress += 0.5;
                 swiper.progressBar.style.width = `${swiper.slideProgress}%`;
             } else if ( swiper.slideProgress > 0 ) {
-                swiper.slideNext();   
+                swiper.slideNext();
             }
         });
     }, 70);
@@ -43,6 +43,11 @@ function initSlider(swiper, progressBar) {
     swiper.on('transitionEnd', () => {
         swiper.slideProgress += 0.5;
     });
+
+    // должно работать само, но иногда не срабатывает
+    if ( swiper.thumbs.swiper ) {
+        swiper.on('slideChange', swiper.thumbs.swiper.slideTo(swiper.thumbs.swiper.activeIndex));
+    }
 
 }
 
@@ -69,10 +74,19 @@ export function initNewsSlider() {
 export function initTerritorySlider() {
 
     const section = document.querySelector('.main-territory');
-    const swiperContainer = section.querySelector('.swiper-container');
+    const swiperContainer = section.querySelector('.slider.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
+    const thumbsContainer = section.querySelector('.thumbs .swiper-container');
+    const thumbSwiper = new Swiper(thumbsContainer, sliderConfig.thumbs);
 
-    const swiper = new Swiper(swiperContainer, sliderConfig.territory);
+
+    const swiper = new Swiper(swiperContainer, {
+        ...sliderConfig.territory,
+        thumbs: {
+            swiper: thumbSwiper,
+            slideThumbActiveClass: 'active',
+        }
+    });
 
     initSlider(swiper, progressBar);
 }
@@ -80,10 +94,18 @@ export function initTerritorySlider() {
 export function initGallerySlider() {
 
     const section = document.querySelector('.main-gallery');
-    const swiperContainer = section.querySelector('.swiper-container');
+    const swiperContainer = section.querySelector('.slider.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
+    const thumbsContainer = section.querySelector('.thumbs .swiper-container');
+    const thumbSwiper = new Swiper(thumbsContainer, sliderConfig.thumbs);
 
-    const swiper = new Swiper(swiperContainer, sliderConfig.gallery);
+    const swiper = new Swiper(swiperContainer, {
+        ...sliderConfig.gallery,
+        thumbs: {
+            swiper: thumbSwiper,
+            slideThumbActiveClass: 'active',
+        }
+    });
 
     initSlider(swiper, progressBar);
 }

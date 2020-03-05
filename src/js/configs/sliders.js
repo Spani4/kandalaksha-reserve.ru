@@ -58,7 +58,21 @@ export default {
         
         navigation: {
             prevEl: '.slider-btn.left',
-            nextEl: '.slider-btn.right'
+            nextEl: '.slider-btn.right',
+            disabledClass: 'disabled',
+        },
+    },
+
+    thumbs: {
+        slidesPerView: 3,
+        speed: 300,
+        spaceBetween: 10,
+
+        breakpoints: {
+
+            769: {
+                spaceBetween: 20,
+            },
         },
     },
 

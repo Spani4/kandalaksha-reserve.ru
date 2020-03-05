@@ -44,8 +44,14 @@
     }
 
     &__link {
-        display: block;
+        display: inline-block;
         height: 100%;
         line-height: 34px;
+
+        &:only-child {
+            // display: block;
+            color: $link-color;
+            text-decoration: underline;
+        }
     }
 }
