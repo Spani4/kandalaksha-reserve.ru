@@ -19,6 +19,7 @@ module.exports = {
     "no-param-reassign": "off",
     "no-plusplus": "off",
     "object-shorthand": "off",
-    "default-case": "off"
+    "default-case": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
