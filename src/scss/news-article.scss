@@ -1,0 +1,65 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/header-mobile";
+@import "modules/nav";
+@import "modules/nav-mobile";
+@import "modules/footer";
+@import "modules/contacts";
+
+@import "components/section";
+@import "components/bg";
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/page-title";
+@import "components/custom-text";
+
+
+
+.news-article {
+
+    @extend %outer;
+
+    position: relative;
+
+    @include screen(768) {
+        padding-top: 11vw;
+    }
+    @include screen(575) {
+        padding-top: 60px;
+    }
+    
+    &__wrapper {
+        @extend %wrapper;
+        margin-bottom: 80px;
+
+        @include screen(992) {
+            margin-bottom: 60px;
+        }
+        @include screen(768) {
+            margin-bottom: 50px;
+        }
+        @include screen(575) {  
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+
+        @include screen(768) {
+            @include flex(column-reverse)
+        }
+    }
+
+    &__image {
+        float: left;
+        width: 280px;
+        height: 280px;
+        margin: 0 20px 10px 0;
+
+        @include screen(768) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -1,16 +1,16 @@
 nav.nav-mobile.js-nav-mobile
     ul.nav-mobile__list
     
-        each i in [1,2,3,4,5,6,7,8,9]
+        each i in [1,2]
             li.nav-mobile__item.js-item
                 a.nav-mobile__link.js-link(href="#") Категория #{i}
                 ul.nav-mobile__list.hidden.js-list
 
-                    each j in [1,2,3,4,5,6]
+                    each j in [1,2]
                         li.nav-mobile__item.js-item
                             a.nav-mobile__link.js-link(href="#") Подкатегория #{j}
                             ul.nav-mobile__list.hidden.js-list
 
-                                each k in [1,2,3,]
+                                each k in [1,2]
                                     li.nav-mobile__item
                                         a.nav-mobile__link(href="#") Подподкатегория #{k}

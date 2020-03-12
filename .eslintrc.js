@@ -20,6 +20,7 @@ module.exports = {
     "no-plusplus": "off",
     "object-shorthand": "off",
     "default-case": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "global-require": "off"
   }
 }
