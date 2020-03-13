@@ -17,7 +17,7 @@ module.exports = class Html {
                 inject  : true,
                 minify  : false,
                 chunks  : [basename],
-                favicon: 'src/images/favicon.ico'
+                // favicon: 'src/images/favicon.ico'
             })
         });
     }
