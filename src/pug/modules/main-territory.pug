@@ -5,38 +5,53 @@ section.main-territory.section
         p Территория Кандалакшского заповедника состоит из 13 участков, расположенных вокруг Кольского полуострова от границ с Норвегией в Баренцевом море до Республики Карелия в Белом море. Большинство участков представляют собой морские архипелаги с прилегающей акваторией. В состав заповедника входит не только суша, но и морская акватория, которая составляет 74,2 % от общей площади и имеет большое значение для существования морских птиц.
     .main-territory__content
         .main-territory__slider.slider.swiper-container
-            .main-territory__progress-bar
-                .slider-progress-bar  
+            //- .main-territory__progress-bar
+            //-     .slider-progress-bar  
             .main-territory__slider-wrapper.swiper-wrapper
 
-                - var arr = [1,2,3,4,5]
+                - var arr = [1,2,3,4]
                 each i in arr
                     .main-territory__slide.slider.swiper-slide
                         .main-territory__slide-wrapper
-                                .main-territory__slide-content
-                                    .main-territory__slide-controls
-                                        .main-territory__slide-number 0#{i}/0#{arr.length}
-                                        .main-territory__slide-controls-buttons
-                                            button.main-territory__slide-controls-btn.icon-btn.btn-prev
-                                                svg.icon
-                                                    use(href="/icons/icons.svg#arr-left-2")
-                                            button.main-territory__slide-controls-btn.icon-btn.btn-next
-                                                svg.icon
-                                                    use(href="/icons/icons.svg#arr-right-2")
-                                    .main-territory__slide-description               
-                                        .main-territory__slide-title Западный Мурман         
-                                        .main-territory__slide-description-text.custom-text 
-                                            p Западный Мурман состоит из двух островов: Большого Айнова и Малого Айнова.
-                                            p Участок заповедника включен в Баренцевоморскую инспекцию.
-                                            p Острова включены в заповедник в 1947 году.
-                                            p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
-                                .main-territory__slide-photo(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-            .main-territory__thumbs.thumbs
-                .swiper-container
-                    .swiper-wrapper
-                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
-                        .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                            .main-territory__slide-content
+                                .main-territory__slide-controls
+                                    .main-territory__slide-number 0#{i}/0#{arr.length}
+                                    .main-territory__slide-controls-buttons
+                                        button.main-territory__slide-controls-btn.icon-btn.btn-prev
+                                            svg.icon
+                                                use(href="/icons/icons.svg#arr-left-2")
+                                        button.main-territory__slide-controls-btn.icon-btn.btn-next
+                                            svg.icon
+                                                use(href="/icons/icons.svg#arr-right-2")
+                                .main-territory__slide-description               
+                                    .main-territory__slide-title Западный Мурман         
+                                    .main-territory__slide-description-text.custom-text 
+                                        p Западный Мурман состоит из двух островов: Большого Айнова и Малого Айнова.
+                                        p Участок заповедника включен в Баренцевоморскую инспекцию.
+                                        p Острова включены в заповедник в 1947 году.
+                                        p Первичная цель заповедания: охрана гнездовий обыкновенной гаги и мест обитания серого тюленя.
+                                //- стили изображения дать внутреннему слайдеру
+                                .main-territory__inner-slider.inner-slider 
+                                    .main-territory__thumbs.thumbs
+                                        .swiper-container
+                                            .swiper-wrapper
+                                                .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                                                .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/gallery-image-2.jpg')})`)
+                                                .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                                                .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/gallery-image-2.jpg')})`)
+                                                .main-territory__slide-thumbs-item.thumbs-item.swiper-slide(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                                    .main-territory__inner-slider-container.swiper-container
+                                        //- .main-territory__progress-bar
+                                        .slider-progress-bar  
+                                        .swiper-wrapper
+                                            .swiper-inner-slide.swiper-slide
+                                                .main-territory__slide-photo(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                                            .swiper-inner-slide.swiper-slide
+                                                .main-territory__slide-photo(data-bg=`url(${require('../../images/gallery-image-2.jpg')})`)
+                                            .swiper-inner-slide.swiper-slide
+                                                .main-territory__slide-photo(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
+                                            .swiper-inner-slide.swiper-slide
+                                                .main-territory__slide-photo(data-bg=`url(${require('../../images/gallery-image-2.jpg')})`)
+                                            .swiper-inner-slide.swiper-slide
+                                                .main-territory__slide-photo(data-bg=`url(${require('../../images/main-territory-slide-1.jpg')})`)
 

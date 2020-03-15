@@ -6,7 +6,6 @@ import LazyLoad from "vanilla-lazyload";
 import initHeaderMobile from "./modules/header-mobile";
 import initNavMobile from "./modules/nav-mobile";
 
-// import initLazyImages from "./components/lazy-img";
 import collapsibleNav from "./components/collapsible-nav";
 
 import { initContactsMap } from "./components/maps";

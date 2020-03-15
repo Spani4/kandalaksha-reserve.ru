@@ -48,7 +48,6 @@ function initSlider(swiper, progressBar) {
     if ( swiper.thumbs.swiper ) {
         swiper.on('slideChange', swiper.thumbs.swiper.slideTo(swiper.thumbs.swiper.activeIndex));
     }
-
 }
 
 
@@ -71,24 +70,39 @@ export function initNewsSlider() {
     const swiper = new Swiper(swiperContainer, sliderConfig.news);
 }
 
+export function initTerritoryInnerSlider(innerSlider, parentSlider) {
+
+    const swiperContainer = innerSlider.querySelector('.main-territory__inner-slider-container.swiper-container');
+    const thumbsContainer = innerSlider.querySelector('.thumbs .swiper-container');
+    const progressBar = innerSlider.querySelector('.slider-progress-bar');
+    
+    const thumbSwiper = new Swiper(thumbsContainer, sliderConfig.thumbs);
+
+    const swiper = new Swiper(swiperContainer, {
+        ...sliderConfig.territoryInner,
+
+        thumbs: {
+            swiper: thumbSwiper,
+            slideThumbActiveClass: 'active',
+        },
+    });
+
+    initSlider(swiper, progressBar);
+}
+
 export function initTerritorySlider() {
 
     const section = document.querySelector('.main-territory');
     const swiperContainer = section.querySelector('.slider.swiper-container');
-    const progressBar = section.querySelector('.slider-progress-bar');
-    const thumbsContainer = section.querySelector('.thumbs .swiper-container');
-    const thumbSwiper = new Swiper(thumbsContainer, sliderConfig.thumbs);
-
+    const innerSliders = swiperContainer.querySelectorAll('.inner-slider');
 
     const swiper = new Swiper(swiperContainer, {
         ...sliderConfig.territory,
-        thumbs: {
-            swiper: thumbSwiper,
-            slideThumbActiveClass: 'active',
-        }
     });
 
-    initSlider(swiper, progressBar);
+    innerSliders.forEach(innerSlider => {
+        initTerritoryInnerSlider(innerSlider, swiper);
+    });
 }
 
 export function initGallerySlider() {

@@ -39,16 +39,25 @@ export default {
         loop: true,
         slidesPerView: 1,
         speed: 1000,
-        effect: 'fade',
+        // effect: 'fade',
+        allowTouchMove: false,
 
-        fadeEffect: {
-            crossFade: true
-        },
+        // fadeEffect: {
+        //     crossFade: true
+        // },
         
         navigation: {
             prevEl: '.main-territory .btn-prev',
             nextEl: '.main-territory .btn-next'
         },
+    },
+
+    territoryInner: {
+        loop: true,
+        slidesPerView: 1,
+        speed: 400,
+        slideClass: 'swiper-inner-slide',
+        nested: true,
     },
 
     gallery: {
@@ -67,6 +76,7 @@ export default {
         slidesPerView: 3,
         speed: 300,
         spaceBetween: 10,
+        slideClass: 'thumbs-item',
 
         breakpoints: {
 
