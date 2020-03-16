@@ -54,6 +54,8 @@ function initSlider(swiper, progressBar) {
 export function initMainSlider() {
 
     const section = document.querySelector('.main-slider');
+    if (!section) return;
+
     const swiperContainer = section.querySelector('.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
 
@@ -65,6 +67,8 @@ export function initMainSlider() {
 export function initNewsSlider() {
 
     const section = document.querySelector('.main-news');
+    if (!section) return;
+
     const swiperContainer = section.querySelector('.swiper-container');
 
     const swiper = new Swiper(swiperContainer, sliderConfig.news);
@@ -93,6 +97,8 @@ export function initTerritoryInnerSlider(innerSlider, parentSlider) {
 export function initTerritorySlider() {
 
     const section = document.querySelector('.main-territory');
+    if (!section) return;
+
     const swiperContainer = section.querySelector('.slider.swiper-container');
     const innerSliders = swiperContainer.querySelectorAll('.inner-slider');
 
@@ -108,6 +114,8 @@ export function initTerritorySlider() {
 export function initGallerySlider() {
 
     const section = document.querySelector('.main-gallery');
+    if (!section) return;
+
     const swiperContainer = section.querySelector('.slider.swiper-container');
     const progressBar = section.querySelector('.slider-progress-bar');
     const thumbsContainer = section.querySelector('.thumbs .swiper-container');
@@ -127,6 +135,7 @@ export function initGallerySlider() {
 export function initPopupSlider(section, images) {
 
     const swiperContainer = section.querySelector('.swiper-container');
+    if (!section) return;
 
     const swiper = new Swiper(swiperContainer, sliderConfig.popup);
     const closeBtn = section.querySelector('.js-close');
@@ -148,16 +157,16 @@ export function initPopupSlider(section, images) {
     section.addEventListener('wheel', (e) => {
         e.preventDefault();
     });
-
 }
 
 export function initPagesSlider() {
 
     const section = document.querySelector('.pages__photos');
+    if (!section) return;
+
     const swiperContainer = section.querySelector('.swiper-container');
 
     const swiper = new Swiper(swiperContainer, sliderConfig.pages);
-
 }
 
 

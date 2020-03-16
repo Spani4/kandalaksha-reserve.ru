@@ -13,7 +13,9 @@
     }
 
     &__contacts {
-        @include flex(row,sb,c);
+        @include flex(row,sb,s);
+
+        margin-bottom: 10px;
         
         @include screen(1199) {
             flex-wrap: wrap;
@@ -29,7 +31,7 @@
         }
      
         &-elem {
-            @include flex(row,fs,c);
+            @include flex(col,fs,fs);
             margin-bottom: 25px;
 
             @include screen(991) {
@@ -51,6 +53,19 @@
                 @include screen(420) {
                     font-size: 16px;
                 }
+            }
+        }
+
+        &-elem-item {
+            @include flex(row,fs,c);
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            @include screen(768) {
+                justify-content: center;
+                width: 100%;
             }
         }
         
@@ -90,17 +105,21 @@
     &__phone {
         min-width: 195px;
         word-break: keep-all;
-
+        
+        @include screen(768) {
+            min-width: 0;
+        }
     }
     
     &__address {
         width: 350px;
-        
-        @include screen(420) {
-            width: auto;
+
+        @include screen(768) {
+            // width: auto;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
-
 
     &__social {
 

@@ -11,6 +11,7 @@
     
     &-item.swiper-slide {
         @include transition(filter);
+        min-width: 80px;
         width: 80px;
         height: 80px;
         background-position: center;
@@ -21,7 +22,7 @@
 
         // для слайдера territory на главной
         // из-за fade перехода видимо:
-        pointer-events: initial !important;
+        // pointer-events: initial !important;
 
         &:hover {
             filter: brightness(1.1);
@@ -45,6 +46,7 @@
         
         &-item.swiper-slide {
             @include transition(filter);
+            min-width: 60px;
             width: 60px;
             height: 60px;
             // margin-right: 10px;

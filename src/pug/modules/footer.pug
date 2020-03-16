@@ -4,19 +4,22 @@ footer.footer
             .footer__contacts-elem.footer__logo
                 a.footer__logo-link(href="#")
                     img.footer__logo-img(src=require("../../images/footer-logo.svg"), alt="КАНДАЛАКШСКИЙ государственный заповедник")
-            a.footer__contacts-elem.footer__phone(href="tel:79210430930")
-                svg.icon.footer__contacts-icon
-                    use(href="icons/icons.svg#phone")
-                span +7-921-043-09-30
-            a.footer__contacts-elem.footer__address(href="#")
-                svg.icon.footer__contacts-icon
-                        use(href="icons/icons.svg#map-pin")
-                span 182042 Мурманская область, г.&nbsp;Кандалакша,&nbsp;ул.&nbsp;Линейная,&nbsp;д.35
-            a.footer__contacts-elem.footer__email(href="mailto:kand_reserve@mail.ru")
-                svg.icon.footer__contacts-icon
-                        use(href="icons/icons.svg#mail")
-                span kand_reserve@mail.ru
-
+            .footer__contacts-elem
+                a.footer__contacts-elem-item.footer__phone(href="tel:79210430930")
+                    svg.icon.footer__contacts-icon
+                        use(href="icons/icons.svg#phone")
+                    span +7-921-043-09-30
+            .footer__contacts-elem
+                a.footer__contacts-elem-item.footer__address(href="#")
+                    svg.icon.footer__contacts-icon
+                            use(href="icons/icons.svg#map-pin")
+                    span 182042 Мурманская область, г.&nbsp;Кандалакша, ул.&nbsp;Линейная,&nbsp;д.35
+            
+            .footer__contacts-elem
+                a.footer__contacts-elem-item.footer__email(href="mailto:kand_reserve@mail.ru")
+                    svg.icon.footer__contacts-icon
+                            use(href="icons/icons.svg#mail")
+                    span kand_reserve@mail.ru
 
         .footer__social
             a.link-social(href="#", aria-label="vkontakte")
