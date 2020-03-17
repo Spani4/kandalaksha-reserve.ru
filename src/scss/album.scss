@@ -47,6 +47,16 @@
         }
     }
 
+    &__description {
+
+        margin-top: -20px;
+        margin-bottom: 20px;
+
+        @include screen(768) {
+            margin-top: 0px;
+        }
+    }
+
     &__photos {
 
         @include flex(row, c, fs, wrap);

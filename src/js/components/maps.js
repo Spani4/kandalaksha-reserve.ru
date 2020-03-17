@@ -6,7 +6,7 @@ import L from "leaflet/dist/leaflet";
 export function initContactsMap() {
     const map = L.map('main-map').setView([67.133085, 32.417791], 13);
     
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tilessputnik.ru/{z}/{x}/{y}.png?from_api=v0.3', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     
