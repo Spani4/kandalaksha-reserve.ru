@@ -11,7 +11,11 @@ export default {
                 mask: '+{7} (000) 000 00 00',
             },
 
-            reserveList: ['Reserve 1', 'Reserve 2', 'Reserve 3', 'Reserve 4'],
+            reserveList: [
+                'Кандалакшский заповедник',
+                'Заказник «Канозерский»',
+                'Заказник «Мурманский тундровый»',
+                ],
             showReserveList: false,
 
             reserve: '',
