@@ -19,7 +19,11 @@
     &__slide {
         position: relative;
         padding: 0 20px;
-        // overflow: hidden;
+
+        // &-author {
+        //     color: $light-font-color;
+
+        // }
 
         &-wrapper {
             @extend %wrapper;
@@ -127,6 +131,19 @@
 
         .swiper-inner-slide {
             @extend .swiper-slide;
+            position: relative;
+        }
+    }
+
+    &__slide {
+        position: relative;
+        &-author {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            letter-spacing: 1px;
+            color: $bg-color;
+            text-shadow: 0 0 2px black;
         }
     }
 }

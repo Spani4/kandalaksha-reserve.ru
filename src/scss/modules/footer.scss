@@ -4,6 +4,7 @@
     border-top: 1px solid $color2;
     font: $roboto-18;
     background-color: $bg-color;
+    overflow: hidden;
 
     &__wrapper {
         @extend %wrapper;

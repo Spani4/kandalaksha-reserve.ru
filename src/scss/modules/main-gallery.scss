@@ -24,12 +24,20 @@
         background-repeat: no-repeat;
 
         @include screen(768) {
-
             height: 400px;
         }
         @include screen(585) {
-
             height: 320px;
         }
     }
+
+    &__slide-author {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        letter-spacing: 1px;
+        color: $bg-color;
+        text-shadow: 0 0 2px black;
+    }        
+
 }
