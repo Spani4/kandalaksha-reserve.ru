@@ -109,6 +109,22 @@
                 filter: brightness(.9);
             }
         }
+
+        &-description {
+            position: absolute;
+            @include flex(row, c, c);
+            width: calc(100% - 20px);
+            min-height: 90px;
+            left: 10px;
+            padding: 10px;
+            bottom: 0;
+            overflow: hidden;
+            font-size: 18px;
+            color: $bg-color;   
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+
     }
 
     &__link {

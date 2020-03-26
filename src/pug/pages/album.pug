@@ -6,12 +6,12 @@ block content
             h2.album__title.page-title НАЗВАНИЕ АЛЬБОМА
             .album__description В Кандалакшском заливе заповедная территория подразделяется на 9 архипелагов: Олений, Лувеньгский, Северный, Кибринский, Тарасиха, Вачев, Кемь-лудский, Порья губа, о. Великий с прилегающими островами.
             .album__photos
-                - var arr = [0,0,0,0,0,0,0,0,0]
+                - var arr = [0,0,0,0,0,0,0,0,0,0,0,0]
                 each i in arr
                     .album__photos-item
                         img.album__photos-image.js-open-slider(data-src=`${require('../../images/album-item-1.jpg')}`, alt="Photo", aria-label="Фото")
-                    .album__photos-item
-                        img.album__photos-image.js-open-slider(data-src=`${require('../../images/album-item-2.jpg')}`, alt="Photo", aria-label="Фото")
+                        .album__photos-description Кандалакшский залив Белого моря
+
             a.album__link(href="gallery.html")
                 svg.icon
                     use(href="icons/icons.svg#arr-left-2")
