@@ -40,11 +40,16 @@
 
         &-author {
             position: absolute;
-            right: 20px;
-            bottom: 10px;
+            right: 0px;
+            bottom: 50%;
+            font-size: 14px;
             letter-spacing: 1px;
             color: $bg-color;
-            text-shadow: 0 0 2px black;
+            text-shadow: 0 0 1px black;
+            font-style: italic;
+
+            transform-origin: right bottom;
+            transform: rotateZ(-90deg);
         }
 
         &-wrapper {
