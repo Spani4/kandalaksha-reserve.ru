@@ -13,6 +13,17 @@ header.header-mobile.js-header-mobile
         button.header-mobile__search-btn.icon-btn(aria-label="Search")
             svg.icon
                 use(href="icons/icons.svg#search")
-  
+
+
+
     .header-mobile__nav.hidden.js-header-mobile-nav
         include ./nav-mobile.pug
+        .header-mobile__lang
+            .lang-switcher
+                button.lang-switcher__btn.lang-switcher__item#ru(
+                    onclick='doGTranslate("ru|ru"); return false;'
+                ) RU
+                span &nbsp;/&nbsp;
+                button.lang-switcher__btn.lang-switcher__item#en(
+                    onclick='doGTranslate("ru|en"); return false;'
+                    ) EN

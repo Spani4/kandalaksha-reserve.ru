@@ -1,3 +1,5 @@
+@import "../components/lang-switcher.scss";
+
 .header {
 
     $header-height: 110px;
@@ -44,7 +46,6 @@
     &__logo {
         @include flex(row,fs,c);
         position: absolute;
-        // width: 210px;
         top: 5px;
         left: 0%;
 
@@ -59,13 +60,11 @@
         width: auto;
         height: 100%;
         flex-grow: 1;
-
     }
 
     &__search {
         @include flex(row,fs,c);
         position: absolute;
-
         right: 160px;
         top: 20px;
 

@@ -1,3 +1,6 @@
+@import "../components/lang-switcher.scss";
+
+
 .header-mobile {
 
     $height: 60px;
@@ -101,5 +104,10 @@
         &.hidden {
             height: 0;
         }
+    }
+
+    &__lang {
+        margin-top: 40px;
+        text-align: center;
     }
 }

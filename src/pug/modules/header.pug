@@ -19,7 +19,26 @@ header.header
                 svg.icon
                     use(href="icons/icons.svg#eye")
         .header__lang
-            a.header__lang-link(href="#") RU / EN
+            .lang-switcher
+                button.lang-switcher__btn.lang-switcher__item#ru(
+                    onclick='doGTranslate("ru|ru"); return false;'
+                ) RU
+                span &nbsp;/&nbsp;
+                button.lang-switcher__btn.lang-switcher__item#en(
+                    onclick='doGTranslate("ru|en"); return false;'
+                    ) EN
 
         .header__nav
             include ./nav.pug
+
+
+                .lang-switcher
+                    button.lang-switcher__btn.lang-switcher__item#ru(
+                        type='button', 
+                        onclick='doGTranslate("ru|ru"); return false;'
+                    ) RU
+                    span.lang-switcher__separator /
+                    button.lang-switcher__btn.lang-switcher__item#en(
+                        type='button', 
+                        onclick='doGTranslate("ru|en"); return false;'
+                        ) EN
