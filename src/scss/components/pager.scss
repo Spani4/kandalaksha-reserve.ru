@@ -1,0 +1,40 @@
+.pager {
+
+    &__pages {
+        @include flex(row,c);
+        padding: 20px 0;
+    }
+
+    &__page {
+        @include transition(all);
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        
+        border-radius: 50%;
+        border: 1px solid $theme-color;
+
+        color: $theme-color;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &:not(.pager__page_active):hover {
+            background-color: $theme-color;
+            color: $bg-color;
+            opacity: .7;
+        }
+
+        &_active {
+            background-color: $theme-color;
+            color: $bg-color;
+            
+        }
+    }
+}

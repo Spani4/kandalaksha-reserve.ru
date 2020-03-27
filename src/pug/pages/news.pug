@@ -5,10 +5,16 @@ block content
         .news__wrapper
             h2.news__title.page-title НОВОСТИ
             .news__albums
-                - var arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                - var arr = [0,0,0]
                 each i in arr
                     .news__albums-item
                         a.news__albums-image(href="news-article.html", data-bg=`url(${require('../../images/logo.svg')})`, aria-label="Альбом")
                             .news__albums-description
                                 .news__albums-text Кандалакшский залив Белого моря
+
+            .pager   
+                .pager__pages     
+                    span.pager__page.pager__page_active 1
+                    a.pager__page(href="#") 2
+                    a.pager__page(href="#") 3
 
