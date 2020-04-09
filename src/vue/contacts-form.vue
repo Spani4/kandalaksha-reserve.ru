@@ -5,7 +5,7 @@ import { IMaskDirective } from "vue-imask";
 export default {
     name: 'Form',
 
-    props: ['reservelist'],
+    props: ['reserve-list'],
 
     data: () => {
         return {
@@ -13,12 +13,6 @@ export default {
                 mask: '+{7} (000) 000 00 00',
             },
 
-            reserveList: [
-                'Кандалакшский заповедник',
-                'Заказник «Канозерский»',
-                'Заказник «Мурманский тундровый»',
-                'Музей природ',
-                ],
             showReserveList: false,
 
             reserve: '',
@@ -182,10 +176,7 @@ export default {
     },
 
     created() {},
-
-    mounted() {
-        console.log(this.reservelist)
-    }
+    mounted() {},
 };
 </script>
 

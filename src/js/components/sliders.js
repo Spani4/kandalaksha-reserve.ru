@@ -146,6 +146,7 @@ export function initPopupSlider(section, images) {
 
             section.classList.remove('hidden');
             if ( !swiper.ready ) swiper.init();
+            swiper.update();
             swiper.slideTo(i, 0);
         });
     });
