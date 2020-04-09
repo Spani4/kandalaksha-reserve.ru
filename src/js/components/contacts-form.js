@@ -1,6 +1,9 @@
 import Vue from "vue";
 
 import form from "../../vue/contacts-form.vue";
+import noty from "../components/showNoty";
+
+Vue.prototype.$noty = noty;
 
 export default function() {
 

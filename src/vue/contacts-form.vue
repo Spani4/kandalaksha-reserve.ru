@@ -5,6 +5,8 @@ import { IMaskDirective } from "vue-imask";
 export default {
     name: 'Form',
 
+    props: ['reservelist'],
+
     data: () => {
         return {
             phoneMask: {
@@ -15,6 +17,7 @@ export default {
                 'Кандалакшский заповедник',
                 'Заказник «Канозерский»',
                 'Заказник «Мурманский тундровый»',
+                'Музей природ',
                 ],
             showReserveList: false,
 
@@ -24,14 +27,11 @@ export default {
             fullName: '',
             phone: '',
             email: '',
+            dateArrival: '',
+            dateDeparting: '',
 
-            date: {
-                arrival: '',
-                departing: '',
-            },
-
+            peopleLimit: 999,
             errors: [],
-
         };
     },
 
@@ -49,9 +49,9 @@ export default {
         increase: function(age) {
 
             switch (age) {
-                case 'adults': this.adults++;
+                case 'adults': this.adults < this.peopleLimit ? this.adults++ : '';
                     break;
-                case 'children': this.children++;
+                case 'children': this.children < this.peopleLimit ? this.children++ : 0;
             }
         },
 
@@ -68,13 +68,6 @@ export default {
             this.phone = e.detail.unmaskedValue;
         },
 
-        sendForm: function(event) {
-
-            this.errors = [];
-            this.validate();
-            if ( this.errors.length ) event.preventDefault();
-        },
-
         validate: function() {
 
             if ( !this.reserve.trim().length ) this.errors.push('Выберите заповедник');
@@ -83,14 +76,57 @@ export default {
             else if ( this.phone.length < 11 ) this.errors.push('Телефон указан некорректно');
 
             if ( !this.fullName.length ) this.errors.push('Укажите контактное лицо');
-        }
+        },
+
+        sendForm: function(event) {
+
+            event.preventDefault();
+            this.errors = [];
+            this.validate();
+
+            if ( this.errors.length ) {
+                return;
+            }
+
+            const formData = this.getFormData;
+ 
+            fetch('/api/feedback/questions', {
+                method: "POST",
+                body: JSON.stringify(formData),
+            }).then(response => {
+                if ( response.ok ) {
+                    this.$noty('information', 'Заявка успешно отправлена')
+                    this.resetForm();
+                } else {
+                    switch (response.status) {
+                        case 422: this.$noty('error', 'Некорректные данные');
+                            break;
+                        default: throw Error
+                    }
+                }
+            }).catch(err => {
+                console.log(err)
+                this.$noty('error', 'Произошла ошибка при отправке данных');                
+            });
+        },
+
+        resetForm: function() {
+            this.reserve = '';
+            this.adult = 1;
+            this.childre = 0;
+            this.fullName = '';
+            this.phone = '';
+            this.email = '';
+            this.dateArrival = '';
+            this.dateDeparting = '';
+        },
     },
 
     computed: {
 
         getFormattedArrival: function() {
 
-            const date = this.date.arrival;
+            const date = this.dateArrival;
             if ( !date.length ) return '';
             const arr = date.split('-');
 
@@ -99,7 +135,7 @@ export default {
 
         getFormattedDeparting: function() {
 
-            const date = this.date.departing;
+            const date = this.dateDeparting;
             if ( !date.length ) return '';
             const arr = date.split('-');
 
@@ -118,16 +154,38 @@ export default {
 
         getMinDeparting: function() {
 
-            if ( this.date.arrival.length ) return this.date.arrival;
+            if ( this.dateArrival.length ) return this.dateArrival;
             return this.getMinArrival;
+        },
+        
+        getFormData: function() {
+            const data = {
+                reserve: this.reserve,
+                adults: this.adults,
+                name: this.fullName,
+                phones: [ this.phone ],
+            }
+
+            this.email.length ? data.emails = [ this.email ] : '';
+            this.children > 0 ? data.dateArrival = [ this.children ] : '';
+            this.dateArrival.length ? data.dateArrival = this.dateArrival : '';
+            this.dateDeparting.length ? data.dateDeparting = this.dateDeparting : '';
+
+            return data;
         }
     },
+
+    watch: {},
 
     directives: {
         imask: IMaskDirective,
     },
 
-    created() {}
+    created() {},
+
+    mounted() {
+        console.log(this.reservelist)
+    }
 };
 </script>
 
@@ -142,7 +200,7 @@ form.contacts__form(
             name="reserve"
             autocomplete="off"
             v-model="reserve"
-            @keydown="preventInput"
+            @keydown.prevent
             @click="toggleReserveList"
         )
         .contacts__form-reserve-list(
@@ -197,7 +255,7 @@ form.contacts__form(
             label.input.contacts__form-label.date
                 input.contacts__form-input.date(type="date"
                     name="arrival"
-                    v-model="date.arrival"   
+                    v-model="dateArrival"   
                     :min="getMinArrival"             
                 )
                 .input.contacts__form-label-text Дата приезда: {{ getFormattedArrival }}
@@ -207,7 +265,7 @@ form.contacts__form(
             label.input.contacts__form-label.date
                 input.contacts__form-input.date(type="date"
                     name="departing"
-                    v-model="date.departing"
+                    v-model="dateDeparting"
                     :min="getMinDeparting"
                 )
                 .input.contacts__form-label-text Дата отъезда: {{ getFormattedDeparting }}
