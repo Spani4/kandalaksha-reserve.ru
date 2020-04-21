@@ -2,9 +2,8 @@ import "../scss/pages.scss";
 
 import LazyLoad from "vanilla-lazyload";
 
-import initHeaderMobile from "./modules/header-mobile";
-import initNavMobile from "./modules/nav-mobile";
-import collapsibleNav from "./components/collapsible-nav";
+import initGlobals from "./global";
+
 import { initContactsMap } from "./components/maps";
 import initContactsForm from "./components/contacts-form";
 import { initPopupSlider, initPagesSlider } from "./components/sliders";
@@ -12,9 +11,7 @@ import { initPopupSlider, initPagesSlider } from "./components/sliders";
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    initNavMobile();
-    initHeaderMobile();
-    collapsibleNav();
+    initGlobals();
 
     const images = document.querySelectorAll('.js-open-slider');
 

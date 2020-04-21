@@ -10,12 +10,12 @@ header.header
         a.header__ministery(href="#")
             img.header__header__ministery-img(src=require("../../images/footer-logo.svg"), alt="Министерство природных ресурсов и экологии Российской Федерации")
 
-        .header__search
+        //- .header__search
             button.header__search-btn.icon-btn(aria-label="Search")
                 svg.icon
                     use(href="icons/icons.svg#search")
         .header__eye
-            a.header__eye-link(href="#" aria-label="Версия для слабовидящих", title="Версия для слабовидящих")
+            button.header__eye-link.accessibility(href="#" aria-label="Версия для слабовидящих", title="Версия для слабовидящих")
                 svg.icon
                     use(href="icons/icons.svg#eye")
         .header__lang

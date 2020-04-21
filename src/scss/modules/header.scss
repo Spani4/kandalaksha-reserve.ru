@@ -97,6 +97,12 @@
         right: 100px;
         top: 20px;
 
+        &-link {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
         @include screen(991) {
             right: 78px;
         }
