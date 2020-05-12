@@ -251,7 +251,7 @@ form.contacts__form(
                 )
                 .input.contacts__form-label-text Дата приезда: {{ getFormattedArrival }}
                     svg.icon
-                        use(href="icons/icons.svg#calendar")
+                        use(href="/icons/icons.svg#calendar")
         .contacts__form-group
             label.input.contacts__form-label.date
                 input.contacts__form-input.date(type="date"
@@ -261,12 +261,12 @@ form.contacts__form(
                 )
                 .input.contacts__form-label-text Дата отъезда: {{ getFormattedDeparting }}
                     svg.icon
-                        use(href="icons/icons.svg#calendar")
+                        use(href="/icons/icons.svg#calendar")
 
     .contacts__form-row
         label.input.contacts__form-file-label 
             svg.icon
-                use(href="icons/icons.svg#attache")
+                use(href="/icons/icons.svg#attache")
             span Прикрепить файл
             input.hidden(type="file", name="file", hidden) 
     .contacts__form-row
