@@ -52,6 +52,13 @@
 
     &__map {
         height: 700px;
+
+        @include screen(767) {
+            height: 500px;
+        }
+        @include screen(575) {
+            height: 400px;
+        }
     }
 
 
