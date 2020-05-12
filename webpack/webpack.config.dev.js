@@ -12,7 +12,7 @@ module.exports = merge(common, {
     devServer  : {
         https: true,
         port   : 3000,
-        host: "192.168.0.144",
+        // host: "192.168.0.144",
         inline : true,
         overlay: {
             warnings: true,
@@ -21,7 +21,7 @@ module.exports = merge(common, {
         proxy: [
             {
                 context: ['/api', '/data'],
-                target: "https://kandalaksha-reserve.1mcg.ru",
+                target: "https://kandalaksha-reserve.ru",
                 changeOrigin: true,
                 withCredentials: true,
             },

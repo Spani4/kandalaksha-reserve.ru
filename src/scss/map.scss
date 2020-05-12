@@ -1,0 +1,58 @@
+@import "globals/global";
+
+@import "modules/header";
+@import "modules/header-mobile";
+@import "modules/nav";
+@import "modules/nav-mobile";
+@import "modules/footer";
+@import "modules/contacts";
+
+@import "components/bg";
+@import "components/link-social";
+@import "components/icon-btn";
+@import "components/page-title";
+
+// @import "components/custom-text";
+// @import "components/section";
+// @import "modules/popup-slider";
+// @import "components/slider-btn";
+
+
+.map {
+
+    @extend %outer;
+
+    position: relative;
+
+    @include screen(768) {
+        padding-top: 11vw;
+    }
+    @include screen(575) {
+        padding-top: 60px;
+    }
+    
+    &__wrapper {
+        @extend %wrapper;
+        margin-bottom: 80px;
+
+        @include screen(992) {
+            margin-bottom: 60px;
+        }
+        @include screen(768) {
+            margin-bottom: 50px;
+        }
+        @include screen(575) {  
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+        color: $light-font-color;
+    }
+
+    &__map {
+        height: 700px;
+    }
+
+
+}
