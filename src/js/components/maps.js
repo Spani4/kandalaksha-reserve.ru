@@ -49,31 +49,81 @@ export function initInteractiveMap() {
         .then(response => response.json())
         .then(result => setMarkers(map, result._embedded.items))
         .catch(error => console.error(error));
-
 }
 
 function setMarkers(map, objects) {
 
+    const mapEl = document.getElementById('map');
+
+    mapEl.addEventListener('click', (e) => {
+
+        const target = e.target;
+
+        if ( target.classList.contains('circle') ) {
+
+            const circles = mapEl.querySelectorAll('.circle');
+            const circlesCoords = [];
+            const objectsInRadius = [];
+
+            circles.forEach(elem => {
+                const coords = elem.getBoundingClientRect();
+                coords.centerX = coords.x + (coords.width / 2);
+                coords.centerY = coords.y + (coords.height / 2);
+                coords.radius = coords.width / 2;
+                circlesCoords.push(coords);
+            });
+
+            circlesCoords.forEach(elem => {
+
+                const dX = e.clientX - elem.centerX;
+                const dY = e.clientY - elem.centerY;
+                const distance = Math.sqrt(dX * dX + dY * dY);
+
+                if ( distance <= elem.radius ) objectsInRadius.push(elem);
+
+            })
+
+            objects.forEach(object => {
+                object.circle.bindPopup(`Объектов в радиусе: ${objectsInRadius.length}`);
+            });
+
+            // console.log(circles)
+            // console.log(circlesCoords)
+            // console.log(objectsInRadius)
+        }
+    }, true);
+
 
     objects.forEach(object => {
 
-        const popupTemplate = `
+        const image = object.picture ? `<img src=${object.picture} alt=${object.title} style="width: 100%">` : '';
+        const title = object.title ? `<p><strong>${object.title}</strong></p>` : '';
+        const text = object.text ? `<span>${object.text}</span>` : '';
+
+        object.popupTemplate = `
             <div style="width: 200px">
-                <img src=${object.picture} alt=${object.title} style="width: 100%">
-                <p><strong>${object.title}</strong></p>
-                <span>${object.text}</span>
+                ${image}${title}${text}
             </div>
         `;
 
-        const coords = object.announce.split(',');
+        object.coords = object.announce.split(',');
 
-        const marker = L.marker(coords, {icon: L.icon({
+        object.marker = L.marker(object.coords, {icon: L.icon({
             iconUrl: require('../../images/marker-icon.png'),
             iconSize: [28, 44],
             iconAnchor: [14, 44],
         })}).addTo(map);
 
-        marker.bindPopup(popupTemplate);
+        object.marker.bindPopup(object.popupTemplate);
+        object.marker.id = object.id;
+
+        object.circle = L.circle(object.coords, {
+            radius: 50000,
+            opacity: 0,
+            fillOpacity: 0.05,
+            className: 'circle',
+        }).addTo(map);
+        object.circle.id = object.id;
     });
 }
 
